@@ -60,6 +60,7 @@ $route['logout'] = 'AuthController/logout';
 //Route Dashboard
 $route['dashboard'] = 'admin/DashboardController';
 
+
 //Admin manajemen Users
 $route['staff_admin'] = 'admin/DashboardController/staffAdmin';
 $route['tambah_admin'] = 'admin/DashboardController/tambahAdmin';

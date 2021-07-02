@@ -9,6 +9,7 @@ class DashboardController extends CI_Controller
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('AdminModels');
+
 		$this->cek_login();
 	}
 
@@ -90,5 +91,7 @@ class DashboardController extends CI_Controller
 		$idUsers = array('id' => $id);
 		$this->AdminModels->delete($idUsers);
 		redirect(base_url('staff_admin'));
+
+		$this->load->view('Dashboard');
 	}
 }

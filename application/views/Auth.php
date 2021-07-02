@@ -52,34 +52,39 @@
 							<!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
 						</div>
 						<div class="account-content">
-							<form class="form-horizontal" method="post" action="<?php echo base_url('login')?> ">
+							<form class="form-horizontal" method="post" action="<?php echo base_url('login') ?> ">
 
 								<div class="form-group ">
 									<div class="col-xs-12">
-										<input class="form-control" name="username" type="text" required="" placeholder="Username">
+										<input class="form-control" name="username" type="text" required=""
+											   placeholder="Username">
 									</div>
 								</div>
 
 								<div class="form-group">
 									<div class="col-xs-12">
-										<input class="form-control" name="password" type="password" required="" placeholder="Password">
+										<input class="form-control" name="password" type="password" required=""
+											   placeholder="Password">
 									</div>
 								</div>
 
 
-<!--								<div class="form-group text-center m-t-30">-->
-<!--									<div class="col-sm-12">-->
-<!--										<a href="page-recoverpw.html" class="text-muted"><i-->
-<!--													class="fa fa-lock m-r-5"></i> Forgot your password?</a>-->
-<!--									</div>-->
-<!--								</div>-->
+								<!--								<div class="form-group text-center m-t-30">-->
+								<!--									<div class="col-sm-12">-->
+								<!--										<a href="page-recoverpw.html" class="text-muted"><i-->
+								<!--													class="fa fa-lock m-r-5"></i> Forgot your password?</a>-->
+								<!--									</div>-->
+								<!--								</div>-->
 
 								<div class="form-group account-btn text-center m-t-10">
 									<div class="col-xs-12">
-<!--										<button class="btn w-md btn-bordered btn-danger waves-effect waves-light"-->
-<!--												type="submit">Log In-->
-<!--										</button>-->
-										<input type="submit" value="Login"  class="btn btn-success btn-rounded">
+										<!--										<button class="btn w-md btn-bordered btn-danger waves-effect waves-light"-->
+										<!--												type="submit">Log In-->
+										<!--										</button>-->
+
+
+										<input type="submit" value="Login" class="btn btn-success">
+
 									</div>
 								</div>
 
@@ -90,7 +95,6 @@
 						</div>
 					</div>
 					<!-- end card-box-->
-
 
 
 				</div>

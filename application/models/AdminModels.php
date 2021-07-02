@@ -40,4 +40,5 @@ class AdminModels extends CI_Model{
 		$this->db->delete('users');
 		return TRUE;
 	}
+
 }
