@@ -66,17 +66,6 @@
 									</div>
 								</div>
 
-								<div class="form-group ">
-									<div class="col-xs-12">
-										<div class="checkbox checkbox-success">
-											<input id="checkbox-signup" type="checkbox" checked>
-											<label for="checkbox-signup">
-												Remember me
-											</label>
-										</div>
-
-									</div>
-								</div>
 
 <!--								<div class="form-group text-center m-t-30">-->
 <!--									<div class="col-sm-12">-->
@@ -90,7 +79,7 @@
 <!--										<button class="btn w-md btn-bordered btn-danger waves-effect waves-light"-->
 <!--												type="submit">Log In-->
 <!--										</button>-->
-										<input type="submit" value="Login"  class="btn btn-success">
+										<input type="submit" value="Login"  class="btn btn-success btn-rounded">
 									</div>
 								</div>
 
@@ -103,13 +92,6 @@
 					<!-- end card-box-->
 
 
-					<div class="row m-t-50">
-						<div class="col-sm-12 text-center">
-							<p class="text-muted">Don't have an account? <a href="page-register.html"
-																			class="text-primary m-l-5"><b>Sign
-										Up</b></a></p>
-						</div>
-					</div>
 
 				</div>
 				<!-- end wrapper -->

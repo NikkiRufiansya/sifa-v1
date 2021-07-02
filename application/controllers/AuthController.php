@@ -58,6 +58,8 @@ class AuthController extends CI_Controller
 						echo "Halaman Marketing";
 					} else if ($cek_login->level == 'keuangan') {
 						echo "Halaman Keuangan";
+					} else if ($cek_login->level == 'mahasiswa'){
+						echo "Halaman Mahasiswa";
 					}
 				} else {
 					echo '<script>alert("email atau Password yang Anda masukan salah.");window.location.href="' . base_url('/') . '";</script>';

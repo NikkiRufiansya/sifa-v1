@@ -59,3 +59,17 @@ $route['logout'] = 'AuthController/logout';
 
 //Route Dashboard
 $route['dashboard'] = 'admin/DashboardController';
+
+//Admin manajemen Users
+$route['staff_admin'] = 'admin/DashboardController/staffAdmin';
+$route['tambah_admin'] = 'admin/DashboardController/tambahAdmin';
+$route['proses_tambah_admin'] = 'admin/DashboardController/prosesTambahAdmin';
+$route['ubah_admin/(:num)'] = 'admin/DashboardController/ubahUser/$1';
+$route['proses_ubah_admin'] = 'admin/DashboardController/prosesUbahAdmin';
+$route['hapus_admin/(:num)'] = 'admin/DashboardController/hapusAdmin/$1';
+
+
+//Admin Master Dosen
+$route['admin_dosen'] = 'admin/DosenController';
+$route['tambah_dosen'] = 'admin/DosenController/tambahDosen';
+$route['proses_tambah_dosen'] = 'admin/DosenController/prosesTambahDosen';
