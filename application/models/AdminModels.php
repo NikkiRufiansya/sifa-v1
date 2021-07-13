@@ -12,7 +12,7 @@ class AdminModels extends CI_Model{
 	}
 
 	public function getAllData(){
-		return $this->db->get('users')->result();
+		return $this->db->query("SELECT * FROM users WHERE level NOT IN ('dosen','mahasiswa')")->result();
 	}
 
 	public function insert($data)

@@ -79,7 +79,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="page-title-box">
-							<h4 class="page-title">Tambah Dosen</h4>
+							<h4 class="page-title">Ubah Dosen</h4>
 							<ol class="breadcrumb p-0 m-0">
 								<li>
 									<a href="#">Zircos</a>
@@ -97,49 +97,53 @@
 				</div>
 
 				<div class="container">
-					<form action="<?php echo base_url('proses_tambah_dosen')?>" method="post" class="data-parsley-validate novalidate">
-
+					<?php foreach ($users as $users):?>
+					<?php foreach ($dosen as $dosen):?>
+					<form action="<?php echo base_url('proses_ubah_dosen')?>" method="post" class="data-parsley-validate novalidate">
 						<div class="form-group">
 							<label for="userName">Username<span class="text-danger">*</span></label>
-							<input type="text" name="username" parsley-trigger="change" required
+							<input type="hidden" name="users_id" value="<?= $users['id']?>" id="">
+							<input type="hidden" name="dosen_id" value="<?= $dosen['id']?>" id="">
+							<input type="text" value="<?= $users['username']?>" name="username" parsley-trigger="change" required
 								   placeholder="Enter user name" class="form-control" id="userName">
 						</div>
 
 						<div class="form-group">
-							<label for="pass1">Password<span class="text-danger">*</span></label>
-							<input id="pass1"  name="password" type="password" placeholder="Password" required
+							<label for="pass1">Password</label>
+							<input type="hidden" name="old_password" value="<?= $users['password']?>" id="">
+							<input id="pass1"  name="new_password" type="password" placeholder="Password Optinal"
 								   class="form-control">
 						</div>
 
 						<div class="form-group">
 							<label for="userName">NIK<span class="text-danger">*</span></label>
-							<input type="text" name="nik" parsley-trigger="change" required
+							<input type="text" value="<?php echo $dosen['nik']?>" name="nik" parsley-trigger="change" required
 								   placeholder="Enter NIK" class="form-control" id="telepone">
 						</div>
 
 						<div class="form-group">
 							<label for="userName">Nama<span class="text-danger">*</span></label>
-							<input type="text" name="nama" parsley-trigger="change" required
+							<input type="text" value="<?= $users['nama']?>" name="nama" parsley-trigger="change" required
 								   placeholder="Enter user name" class="form-control" id="userName">
 						</div>
 
 						<div class="form-group">
 							<label for="emailAddress">Email address<span class="text-danger">*</span></label>
-							<input type="email" name="email" parsley-trigger="change" required
+							<input type="email" value="<?= $users['email']?>" name="email" parsley-trigger="change" required
 								   placeholder="Enter email" class="form-control" id="emailAddress">
 						</div>
 
 
 						<div class="form-group">
 							<label for="userTelepone">Telepone<span class="text-danger">*</span></label>
-							<input type="text" name="telepone" parsley-trigger="change" required
+							<input type="text" value="<?= $users['telepone']?>" name="telepone" parsley-trigger="change" required
 								   placeholder="Enter Telepone" class="form-control" id="telepone">
 						</div>
 
 						<div class="form-group">
 							<label for="userAgama">Agama<span class="text-danger">*</span></label>
 							<select name="agama" id="" class="form-control">
-								<option readonly>Pilih Agama</option>
+								<option readonly><?php echo $dosen['agama']?></option>
 								<option value="islam">Islam</option>
 								<option value="katolik">Katolik</option>
 								<option value="protestan">Protestan</option>
@@ -153,29 +157,30 @@
 						<div class="form-group">
 							<label for="userAlamat">Alamat<span class="text-danger">*</span></label>
 							<input type="text" name="alamat" parsley-trigger="change" required
-								   placeholder="Enter Alamat" class="form-control" id="alamat">
+								   placeholder="Enter Alamat" value="<?php echo $dosen['alamat']?>" class="form-control" id="alamat">
+
 						</div>
 
 						<div class="form-group">
 							<label for="userTempatLahir">Tempat Lahir<span class="text-danger">*</span></label>
 							<input type="text" name="tempat_lahir" parsley-trigger="change" required
-								   placeholder="Enter Tempat Lahir" class="form-control" id="tempat_lahir">
+								   placeholder="Enter Tempat Lahir" value="<?php echo $dosen['tempat_lahir']?>" class="form-control" id="tempat_lahir">
 						</div>
 
 						<div class="form-group">
 							<label for="userTempatLahir">Tempat Lahir<span class="text-danger">*</span></label>
-							<input type="date" name="tanggal_lahir" id="" class="form-control">
+							<input type="date" name="tanggal_lahir" value="<?php echo $dosen['tanggal_lahir']?>" id="" class="form-control">
 						</div>
 
 						<div class="form-group">
 							<label for="userGelar">Gelar<span class="text-danger">*</span></label>
-							<input type="text" name="gelar" id="" placeholder="Enter Gelar" class="form-control">
+							<input type="text" name="gelar" id="" value="<?php echo $dosen['gelar']?>" placeholder="Enter Gelar" class="form-control">
 						</div>
 
 						<div class="form-group">
 							<label for="jenisKelamin">Jenis Kelamin<span class="text-danger">*</span></label>
 							<select name="jenis_kelamin" id="" class="form-control">
-								<option readonly="">Pilih Jenis Kelamin</option>
+								<option readonly><?php echo $dosen['jenis_kelamin']?></option>
 								<option value="pria">Pria</option>
 								<option value="wanita">Wanita</option>
 							</select>
@@ -186,6 +191,8 @@
 						</div>
 
 					</form>
+					<?php endforeach;?>
+					<?php endforeach;?>
 				</div>
 
 

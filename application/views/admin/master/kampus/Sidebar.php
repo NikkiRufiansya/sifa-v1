@@ -30,7 +30,7 @@
 					</ul>
 				</li>
 
-				<li class="has_sub">
+				<li class="hus_sub active">
 					<a href="javascript:void(0);" class="waves-effect"><i
 							class="mdi mdi-layers"></i><span> Master </span> <span
 							class="menu-arrow"></span></a>
@@ -38,7 +38,7 @@
 						<li><a href="<?php echo base_url('admin_identitas_institusi')?>">Identitas Instusi</a></li>
 						<li><a href="<?php echo base_url('admin_program_studi')?>">Program Studi</a></li>
 						<li><a href="<?php echo base_url('admin_program')?>">Program</a></li>
-						<li><a href="admin-sweet-alert.html">Kampus</a></li>
+						<li class="active"><a href="<?php echo base_url('admin_kampus')?>">Kampus</a></li>
 						<li><a href="admin-sweet-alert.html">Ruangan</a></li>
 						<li><a href="<?php echo base_url('admin_kurikulum')?>">Kurikulum</a></li>
 						<li><a href="admin-sweet-alert.html">Mata Kuliah</a></li>

@@ -79,6 +79,32 @@
 
 </script>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#prodi').change(function(){
+			var id=$(this).val();
+			console.log(id)
+			$.ajax({
+				url : "<?php echo site_url('get_kurikulum');?>",
+				method : "POST",
+				data : {prodi_id: id},
+				async : true,
+				dataType : 'json',
+				success: function(data){
+					var html = '';
+					var i;
+					for(i=0; i<data.length; i++){
+						html += '<option value='+data[i].id+'>'+data[i].nama_kurikulum+'</option>';
+					}
+					$('#kurikulum').html(html);
+
+				}
+			});
+			return false;
+		});
+	});
+</script>
+
 
 
 </body>

@@ -74,3 +74,73 @@ $route['hapus_admin/(:num)'] = 'admin/DashboardController/hapusAdmin/$1';
 $route['admin_dosen'] = 'admin/DosenController';
 $route['tambah_dosen'] = 'admin/DosenController/tambahDosen';
 $route['proses_tambah_dosen'] = 'admin/DosenController/prosesTambahDosen';
+$route['ubah_dosen/(:num)'] = 'admin/DosenController/ubahDosen/$1';
+$route['proses_ubah_dosen'] = 'admin/DosenController/prosesUbahDosen';
+$route['hapus_dosen/(:num)/(:num)'] = 'admin/DosenController/hapusDosen/$1/$2';
+
+
+//Admin Indentitas Institusi
+$route['admin_identitas_institusi'] = 'admin/IdentitasInstitusiController';
+$route['tambah_instusi'] = 'admin/IdentitasInstitusiController/tambahInstitusi';
+$route['proses_tambah_institusi'] = 'admin/IdentitasInstitusiController/prosesTambahInstitusi';
+$route['ubah_institusi/(:num)'] = 'admin/IdentitasInstitusiController/ubahInstitusi/$1';
+$route['proses_ubah_institusi'] = 'admin/IdentitasInstitusiController/prosesUbahInstitusi';
+$route['hapus_institusi/(:num)'] = 'admin/IdentitasInstitusiController/hapusInstitusi/$1';
+
+//Admin Program Studi
+$route['admin_program_studi'] = 'admin/ProgramStudiController';
+$route['tambah_program_studi'] = 'admin/ProgramStudiController/tambahProgramStudi';
+$route['proses_tambah_program_studi'] = 'admin/ProgramStudiController/prosesTambahProgramStudi';
+$route['ubah_studi/(:num)'] = 'admin/ProgramStudiController/ubahProgramStudi/$1';
+$route['proses_ubah_program_studi'] = 'admin/ProgramStudiController/prosesUbahProgramStudi';
+$route['hapus_studi/(:num)'] = 'admin/ProgramStudiController/hapusProgramStudi/$1';
+
+//Admin Program
+$route['admin_program'] = 'admin/ProgramController';
+$route['tambah_program'] = 'admin/ProgramController/tambahProgram';
+$route['proses_tambah_program'] = 'admin/ProgramController/prosesTambahProgram';
+$route['ubah_program/(:num)'] = 'admin/ProgramController/ubahProgram/$1';
+$route['proses_ubah_program'] = 'admin/ProgramController/prosesUbahProgram';
+$route['hapus_program/(:num)'] = 'admin/ProgramController/hapusProgram/$1';
+
+
+//admin Kampus
+$route['admin_kampus'] = 'admin/KampusController';
+$route['tambah_kampus'] = 'admin/KampusController/tambahKampus';
+$route['proses_tambah_kampus'] = 'admin/KampusController/prosesTambahKampus';
+$route['ubah_kampus/(:num)'] = 'admin/KampusController/ubahKampus/$1';
+$route['proses_ubah_kampus'] = 'admin/KampusController/prosesUbahKampus';
+$route['hapus_kampus/(:num)'] = 'admin/KampusController/hapusKampus/$1';
+
+//Admin Ruangan
+$route['admin_ruangan'] = 'admin/RuanganController';
+$route['tambah_ruangan'] = 'admin/RuanganController/tambahRuangan';
+$route['proses_tambah_ruangan'] = 'admin/RuanganController/prosesTambahRuangan';
+$route['ubah_ruangan/(:num)'] = 'admin/RuanganController/ubahRuangan/$1';
+$route['proses_ubah_ruangan'] = 'admin/RuanganController/prosesUbahRuangan';
+$route['hapus_ruangan/(:num)'] = 'admin/RuanganController/hapusRuangan/$1';
+
+//Admin Kurikulum
+$route['admin_kurikulum'] = 'admin/KurikulumController';
+$route['tambah_kurikulum'] = 'admin/KurikulumController/tambahKurikulum';
+$route['proses_tambah_kurikulum'] = 'admin/KurikulumController/prosesTambahKurikulum';
+$route['ubah_kurikulum/(:num)'] = 'admin/KurikulumController/ubahKurikulum/$1';
+$route['proses_ubah_kurikulum'] = 'admin/KurikulumController/prosesUbahController';
+$route['hapus_kurikulum/(:num)'] = 'admin/KurikulumController/hapusKurikulum/$1';
+
+//admin Matkul
+$route['admin_matakuliah'] = 'admin/MatkulController';
+$route['tambah_matkul'] = 'admin/MatkulController/tambahMatkul';
+$route['get_kurikulum'] = 'admin/MatkulController/getKurikulum';
+$route['proses_tambah_matkul'] = 'admin/MatkulController/prosesTambahMatkul';
+$route['ubah_matkul/(:num)'] = 'admin/MatkulController/ubahMatkul/$1';
+$route['proses_ubah_matkul'] = 'admin/MatkulController/prosesUbahMatkul';
+$route['hapus_matkul/(:num)'] = 'admin/MatkulController/hapusMatkul/$1';
+
+//admin Mahasiswa
+$route['admin_mahasiswa'] = 'admin/MahasiswaController';
+$route['tambah_mahasiswa'] = 'admin/MahasiswaController/tambahMahasiswa';
+$route['proses_tambah_mahasiwa'] = 'admin/MahasiswaController/prosesTambahMahasiswa';
+$route['ubah_mahasiswa/(:num)'] = 'admin/MahasiswaController/ubahMahasiswa/$1';
+$route['proses_ubah_mahasiswa'] = 'admin/MahasiswaController/prosesUbahMahasiswa';
+$route['hapus_mahasiswa/(:num)/(:num)'] = 'admin/MahasiswaController/hapusMahasiswa/$1/$2';

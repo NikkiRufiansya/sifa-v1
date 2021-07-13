@@ -48,13 +48,9 @@
 
 						<ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
 							<li>
-								<h5>Hi, John</h5>
+								<h5><?php echo $this->session->userdata('nama')?></h5>
 							</li>
-							<li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
-							<li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
-							<li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
-							<li><a href="<?php echo base_url('logout') ?>"><i class="ti-power-off m-r-5"></i> Logout</a>
-							</li>
+							<li><a href="<?php echo base_url('logout')?>"><i class="ti-power-off m-r-5"></i> Logout</a></li>
 						</ul>
 					</li>
 
@@ -66,8 +62,7 @@
 	<!-- Top Bar End -->
 
 
-	<?php require 'Sidebar.php' ?>
-
+	<?php require 'Sidebar.php'?>
 
 	<!-- ============================================================== -->
 	<!-- Start right Content here -->
@@ -79,81 +74,86 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="page-title-box">
-							<h4 class="page-title">Ubah Data Staff</h4>
+							<h4 class="page-title">Dashboard Identitas Institusi</h4>
 							<ol class="breadcrumb p-0 m-0">
 								<li>
 									<a href="#">Zircos</a>
 								</li>
 								<li>
-									<a href="#">Manajemen Users</a>
+									<a href="#">Master</a>
 								</li>
 								<li class="active">
-									Staff Administrator
+									Identitas Insitusi
 								</li>
 							</ol>
 							<div class="clearfix"></div>
 						</div>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<h4 class="m-t-0 header-title"><b>Tambah Data Indentitas Institusi</b></h4>
+						<div class="card-box table-responsive">
+							<form action="<?php echo base_url('proses_tambah_institusi')?>" method="post">
+								<div class="form-group">
+									<label for="">Kode Hukum</label>
+									<input type="text" name="kode_hukum" class="form-control" placeholder="Enter Kode Hukum" id="">
+								</div>
+								<div class="form-group">
+									<label for="">Nama Institusi</label>
+									<input type="text" name="nama_identitas" class="form-control" placeholder="Enter Nama Institusi" id="">
+								</div>
+								<div class="form-group">
+									<label for="">Tanggal Mulai</label>
+									<input type="date" name="tanggal_mulai" class="form-control" placeholder="Enter Tanggal Mulai" id="">
+								</div>
+								<div class="form-group">
+									<label for="">Alamat</label>
+									<input type="text" name="alamat" class="form-control" placeholder="Enter Alamat" id="">
+								</div>
+								<div class="form-group">
+									<label for="">Kota</label>
+									<input type="text" name="kota" class="form-control" placeholder="Enter Kota" id="">
+								</div>
+								<div class="form-group">
+									<label for="">Kode Pos</label>
+									<input type="text" name="kode_pos" class="form-control" placeholder="Enter Kode POS" id="">
+								</div>
+								<div class="form-group">
+									<label for="">Telepone</label>
+									<input type="text" name="telepone" class="form-control" placeholder="Enter Telepone" id="">
+								</div>
+								<div class="form-group">
+									<label for="">Fax</label>
+									<input type="text" name="fax" class="form-control" placeholder="Enter fax" id="">
+								</div>
+								<div class="form-group">
+									<label for="">Email</label>
+									<input type="text" name="email" class="form-control" placeholder="Enter Email" id="">
+								</div>
+								<div class="form-group">
+									<label for="">Website</label>
+									<input type="text" name="website" class="form-control" placeholder="Enter url Website" id="">
+								</div>
+								<div class="form-group">
+									<label for="">No Akta</label>
+									<input type="text" name="no_akta" class="form-control" placeholder="Enter No Akta" id="">
+								</div>
+								<div class="form-group">
+									<label for="">No Sah</label>
+									<input type="text" name="no_sah" class="form-control" placeholder="Enter No Sah" id="">
+								</div>
+								<div class="form-group">
+									<label for="">Tanggal SAH</label>
+									<input type="date" name="tanggal_sah" class="form-control" placeholder="Enter Kode Hukum" id="">
+								</div>
+								<div class="form-group">
 
-				<div class="container">
-					<?php foreach ($users as $key): ?>
-						<form action="<?php echo base_url('proses_ubah_admin') ?>" method="post"
-							  class="data-parsley-validate novalidate">
-
-							<div class="form-group">
-								<label for="userName">Username<span class="text-danger">*</span></label>
-								<input type="hidden" name="id" value="<?php echo $key['id'] ?>" id="">
-								<input type="text" value="<?php echo $key['username'] ?>" name="username"
-									   parsley-trigger="change" required
-									   placeholder="Enter user name" class="form-control" id="userName">
-							</div>
-
-							<div class="form-group">
-								<label for="pass1">Password</label>
-								<input type="hidden" name="old_password" id="" value="<?php echo $key['password'] ?>">
-								<input id="pass1" name="new_password" type="password" placeholder="Password Optional"
-									   class="form-control">
-							</div>
-
-							<div class="form-group">
-								<label for="userName">Nama<span class="text-danger">*</span></label>
-								<input type="text" value="<?php echo $key['nama'] ?>" name="nama"
-									   parsley-trigger="change" required
-									   placeholder="Enter user name" class="form-control" id="userName">
-							</div>
-
-							<div class="form-group">
-								<label for="emailAddress">Email address<span class="text-danger">*</span></label>
-								<input type="email" value="<?php echo $key['email'] ?>" name="email"
-									   parsley-trigger="change" required
-									   placeholder="Enter email" class="form-control" id="emailAddress">
-							</div>
-
-
-							<div class="form-group">
-								<label for="userName">Telepone<span class="text-danger">*</span></label>
-								<input type="text" value="<?php echo $key['telepone'] ?>" name="telepone"
-									   parsley-trigger="change" required
-									   placeholder="Enter Telepone" class="form-control" id="telepone">
-							</div>
-
-							<div class="form-group">
-								<label for="userName">Level User<span class="text-danger">*</span></label>
-								<select name="level" id="" class="form-control">
-									<option readonly=""><?php echo $key['level'] ?></option>
-									<option value="admin">Admin</option>
-									<option value="akademik">Akademik</option>
-									<option value="marketing">Marketing</option>
-									<option value="keuangan">Keuangan</option>
-								</select>
-							</div>
-
-							<div class="form-group text-right m-b-0">
-								<input type="submit" value="submit" class="btn btn-success">
-							</div>
-						</form>
-					<?php endforeach; ?>
+									<input type="submit" name="Submit" class="btn btn-success" >
+								</div>
+							</form>
+						</div>
+					</div>
 				</div>
 
 

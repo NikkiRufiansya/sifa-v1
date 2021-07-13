@@ -119,7 +119,7 @@
 									<td>
 										<a href="<?php echo base_url()?>ubah_admin/<?= $key->id?>"><i class="glyphicon glyphicon-edit"></i></a>
 										||
-										<a href="<?php echo base_url()?>hapus_admin/<?= $key->id?>"><i class="glyphicon glyphicon-trash"></i></a>
+										<a id="danger-alert" href="<?php echo base_url()?>hapus_admin/<?= $key->id?>"><i class="glyphicon glyphicon-trash"></i></a>
 									</td>
 								</tr>
 								<?php endforeach;?>

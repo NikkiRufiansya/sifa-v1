@@ -74,7 +74,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="page-title-box">
-							<h4 class="page-title">Dashboard Administrator</h4>
+							<h4 class="page-title">Dashboard Data Dosen</h4>
 							<ol class="breadcrumb p-0 m-0">
 								<li>
 									<a href="#">Zircos</a>
@@ -117,7 +117,7 @@
 										<td>
 											<a href="<?php echo base_url()?>ubah_dosen/<?= $key->id?>"><i class="glyphicon glyphicon-edit"></i></a>
 											||
-											<a href="<?php echo base_url()?>hapus_dosen/<?= $key->id?>"><i class="glyphicon glyphicon-trash"></i></a>
+											<a href="<?php echo base_url()?>hapus_dosen/<?= $key->id?>/<?= $key->users_id?>"><i class="glyphicon glyphicon-trash"></i></a>
 										</td>
 									</tr>
 								<?php endforeach;?>

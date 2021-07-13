@@ -95,14 +95,15 @@
 					<li class="has_sub">
 						<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span> Master </span> <span class="menu-arrow"></span></a>
 						<ul class="list-unstyled">
-							<li><a href="admin-sweet-alert.html">Identitas Instusi</a></li>
-							<li><a href="admin-sweet-alert.html">Program Studi</a></li>
-							<li><a href="admin-sweet-alert.html">Program</a></li>
-							<li><a href="admin-sweet-alert.html">Kampus</a></li>
-							<li><a href="admin-sweet-alert.html">Ruangan</a></li>
-							<li><a href="admin-sweet-alert.html">Mata Kuliah</a></li>
+							<li><a href="<?php echo base_url('admin_identitas_institusi')?>">Identitas Instusi</a></li>
+							<li><a href="<?php echo base_url('admin_program_studi')?>">Program Studi</a></li>
+							<li><a href="<?php echo base_url('admin_program')?>">Program</a></li>
+							<li><a href="<?php echo base_url('admin_kampus')?>">Kampus</a></li>
+							<li><a href="<?php echo base_url('admin_ruangan')?>">Ruangan</a></li>
+							<li><a href="<?php echo base_url('admin_kurikulum')?>">Kurikulum</a></li>
+							<li><a href="<?php echo base_url('admin_matakuliah')?>">Mata Kuliah</a></li>
 							<li><a href="<?php echo base_url('admin_dosen')?>">Dosen</a></li>
-							<li><a href="admin-sweet-alert.html">Mahasiswa</a></li>
+							<li><a href="<?php echo base_url('admin_mahasiswa')?>">Mahasiswa</a></li>
 							<li><a href="admin-sweet-alert.html">Data Nilai</a></li>
 						</ul>
 					</li>

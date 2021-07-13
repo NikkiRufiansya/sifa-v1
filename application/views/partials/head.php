@@ -27,6 +27,10 @@
 	<link href="<?php echo base_url()?>assets/plugins/datatables/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
 	<link href="<?php echo base_url()?>assets/plugins/datatables/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css"/>
 
+
+	<!-- Sweet Alert -->
+	<link href="<?php echo base_url()?>assets/plugins/bootstrap-sweetalert/sweet-alert.css" rel="stylesheet" type="text/css">
+
 	<!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>

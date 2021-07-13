@@ -48,11 +48,8 @@
 
 						<ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
 							<li>
-								<h5>Hi, John</h5>
+								<h5><?php echo $this->session->userdata('nama') ?></h5>
 							</li>
-							<li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
-							<li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
-							<li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
 							<li><a href="<?php echo base_url('logout') ?>"><i class="ti-power-off m-r-5"></i> Logout</a>
 							</li>
 						</ul>
@@ -68,7 +65,6 @@
 
 	<?php require 'Sidebar.php' ?>
 
-
 	<!-- ============================================================== -->
 	<!-- Start right Content here -->
 	<!-- ============================================================== -->
@@ -79,81 +75,64 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="page-title-box">
-							<h4 class="page-title">Ubah Data Staff</h4>
+							<h4 class="page-title">Dashboard matkul </h4>
 							<ol class="breadcrumb p-0 m-0">
 								<li>
 									<a href="#">Zircos</a>
 								</li>
 								<li>
-									<a href="#">Manajemen Users</a>
+									<a href="#">Master</a>
 								</li>
 								<li class="active">
-									Staff Administrator
+									matkul
 								</li>
 							</ol>
 							<div class="clearfix"></div>
 						</div>
 					</div>
 				</div>
-
-				<div class="container">
-					<?php foreach ($users as $key): ?>
-						<form action="<?php echo base_url('proses_ubah_admin') ?>" method="post"
-							  class="data-parsley-validate novalidate">
-
-							<div class="form-group">
-								<label for="userName">Username<span class="text-danger">*</span></label>
-								<input type="hidden" name="id" value="<?php echo $key['id'] ?>" id="">
-								<input type="text" value="<?php echo $key['username'] ?>" name="username"
-									   parsley-trigger="change" required
-									   placeholder="Enter user name" class="form-control" id="userName">
-							</div>
-
-							<div class="form-group">
-								<label for="pass1">Password</label>
-								<input type="hidden" name="old_password" id="" value="<?php echo $key['password'] ?>">
-								<input id="pass1" name="new_password" type="password" placeholder="Password Optional"
-									   class="form-control">
-							</div>
-
-							<div class="form-group">
-								<label for="userName">Nama<span class="text-danger">*</span></label>
-								<input type="text" value="<?php echo $key['nama'] ?>" name="nama"
-									   parsley-trigger="change" required
-									   placeholder="Enter user name" class="form-control" id="userName">
-							</div>
-
-							<div class="form-group">
-								<label for="emailAddress">Email address<span class="text-danger">*</span></label>
-								<input type="email" value="<?php echo $key['email'] ?>" name="email"
-									   parsley-trigger="change" required
-									   placeholder="Enter email" class="form-control" id="emailAddress">
-							</div>
-
-
-							<div class="form-group">
-								<label for="userName">Telepone<span class="text-danger">*</span></label>
-								<input type="text" value="<?php echo $key['telepone'] ?>" name="telepone"
-									   parsley-trigger="change" required
-									   placeholder="Enter Telepone" class="form-control" id="telepone">
-							</div>
-
-							<div class="form-group">
-								<label for="userName">Level User<span class="text-danger">*</span></label>
-								<select name="level" id="" class="form-control">
-									<option readonly=""><?php echo $key['level'] ?></option>
-									<option value="admin">Admin</option>
-									<option value="akademik">Akademik</option>
-									<option value="marketing">Marketing</option>
-									<option value="keuangan">Keuangan</option>
-								</select>
-							</div>
-
-							<div class="form-group text-right m-b-0">
-								<input type="submit" value="submit" class="btn btn-success">
-							</div>
-						</form>
-					<?php endforeach; ?>
+				<div class="row">
+					<div class="col-sm-12">
+						<h4 class="m-t-0 header-title"><b>Data matkul</b></h4>
+						<div class="card-box table-responsive">
+							<a href="<?php echo base_url('tambah_matkul') ?>" class="btn btn-primary"
+							   style="margin-bottom: 20px;">Tambah matkul </a>
+							<table id="datatable" class="table table-striped table-bordered">
+								<thead>
+								<tr>
+									<th>Program Studi</th>
+									<th>Kurikulum</th>
+									<th>Kode matkul</th>
+									<th>Nama matkul</th>
+									<th>Semester</th>
+									<th>SKS</th>
+									<th>Dosen</th>
+									<th>Action</th>
+								</tr>
+								</thead>
+								<tbody>
+								<?php foreach ($matkul as $key): ?>
+									<tr>
+										<td><?= $key->nama_prodi?></td>
+										<td><?= $key->nama_kurikulum?></td>
+										<td><?= $key->kode_matkul ?></td>
+										<td><?= $key->nama_matkul ?></td>
+										<td><?= $key->semester?></td>
+										<td><?= $key->sks?></td>
+										<td><?= $key->penanggung_jawab?>
+										<td>
+											<a href="<?php echo base_url() ?>ubah_matkul/<?= $key->id ?>"><i
+													class="glyphicon glyphicon-edit"></i></a>
+											||
+											<a href="<?php echo base_url() ?>hapus_matkul/<?= $key->id ?>"><i
+													class="glyphicon glyphicon-trash"></i></a>
+										</td>
+									</tr>
+								<?php endforeach; ?>
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 
 
