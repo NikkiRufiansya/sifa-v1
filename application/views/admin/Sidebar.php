@@ -1,20 +1,17 @@
-<!-- ========== Left Sidebar Start ========== -->
 <div class="left side-menu">
 	<div class="sidebar-inner slimscrollleft">
 
 		<!--- Sidemenu -->
 		<div id="sidebar-menu">
 			<ul>
-				<li class="menu-title">Navigation</li>
+				<li class="menu-title">Navigation All</li>
 
 				<li class="has_sub">
-					<a href="<?php echo base_url('dashboard') ?>" class="waves-effect"><i
-							class="mdi mdi-view-dashboard"></i><span> Dashboard </span> </a>
+					<a href="<?php echo base_url('dashboard')?>" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span> Dashboard </span> </a>
 				</li>
 
 				<li class="has_sub">
-					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> Akademik </span>
-						<span class="menu-arrow"></span></a>
+					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> Akademik </span> <span class="menu-arrow"></span></a>
 					<ul class="list-unstyled">
 						<li><a href="ui-buttons.html">Kalender Akademik</a></li>
 						<li><a href="ui-buttons.html">Penjadwalan Kuliah</a></li>
@@ -30,10 +27,8 @@
 					</ul>
 				</li>
 
-				<li class="hus_sub active">
-					<a href="javascript:void(0);" class="waves-effect"><i
-							class="mdi mdi-layers"></i><span> Master </span> <span
-							class="menu-arrow"></span></a>
+				<li class="has_sub">
+					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span> Master </span> <span class="menu-arrow"></span></a>
 					<ul class="list-unstyled">
 						<li><a href="<?php echo base_url('admin_identitas_institusi')?>">Identitas Instusi</a></li>
 						<li><a href="<?php echo base_url('admin_program_studi')?>">Program Studi</a></li>
@@ -43,8 +38,7 @@
 						<li><a href="<?php echo base_url('admin_kurikulum')?>">Kurikulum</a></li>
 						<li><a href="<?php echo base_url('admin_matakuliah')?>">Mata Kuliah</a></li>
 						<li><a href="<?php echo base_url('admin_dosen')?>">Dosen</a></li>
-						<li class="active"><a href="<?php echo base_url('admin_mahasiswa')?>">Mahasiswa</a></li>
-						<li><a href="admin-sweet-alert.html">Data Nilai</a></li>
+						<li><a href="<?php echo base_url('admin_mahasiswa')?>">Mahasiswa</a></li>
 					</ul>
 				</li>
 
@@ -71,15 +65,15 @@
 					</ul>
 				</li>
 
-				<li>
+				<li class="has_sub">
 					<a href="javascript:void(0);" class="waves-effect"><i
 							class="mdi mdi-layers"></i><span> Manajemen Users </span> <span
 							class="menu-arrow"></span></a>
 					<ul class="list-unstyled">
-						<li><a href="<?php echo base_url('staff_admin') ?>">Staff Administrator</a>
-						</li>
+						<li><a href="<?php echo base_url('staff_admin')?>">Staff Administrator</a></li>
 					</ul>
 				</li>
+
 
 
 			</ul>
@@ -97,4 +91,3 @@
 	<!-- Sidebar -left -->
 
 </div>
-<!-- Left Sidebar End -->

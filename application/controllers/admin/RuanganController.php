@@ -14,8 +14,9 @@ class RuanganController extends CI_Controller
 
 	public function index()
 	{
-		$ruangan['ruangan'] = $this->RuanganModels->getAllData();
+		$ruangan['ruangan'] = $this->RuanganModels->getRuangan();
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/ruangan/Ruangan', $ruangan);
 		$this->load->view('partials/footer');
 	}
@@ -24,6 +25,7 @@ class RuanganController extends CI_Controller
 	{
 		$kampus['kampus'] = $this->KampusModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/ruangan/TambahRuangan', $kampus);
 		$this->load->view('partials/footer');
 	}
@@ -47,6 +49,7 @@ class RuanganController extends CI_Controller
 		$ruangan['ruangan'] = $this->RuanganModels->getDataById($idRuangan);
 		$ruangan['kampus'] = $this->KampusModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/ruangan/UbahRuangan', $ruangan);
 		$this->load->view('partials/footer');
 	}

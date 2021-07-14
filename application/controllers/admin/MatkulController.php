@@ -18,6 +18,7 @@ class MatkulController extends CI_Controller
 	{
 		$matkul['matkul'] = $this->MatkulModels->getMakulByProdiAndKurikulum();
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/matkul/Matkul', $matkul);
 		$this->load->view('admin/master/matkul/footer');
 	}
@@ -27,6 +28,7 @@ class MatkulController extends CI_Controller
 		$data['prodi'] = $this->ProgramStudiModels->getAllData();
 		$data['dosen'] = $this->DosenModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/matkul/TambahMatkul', $data);
 		$this->load->view('admin/master/matkul/footer');
 	}
@@ -62,6 +64,7 @@ class MatkulController extends CI_Controller
 		$data['dosen'] = $this->DosenModels->getAllData();
 		$data['matkul'] = $this->MatkulModels->getDataById($idMatkul);
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/matkul/UbahMatkul', $data);
 		$this->load->view('admin/master/matkul/footer');
 	}

@@ -63,8 +63,6 @@
 	<!-- Top Bar End -->
 
 
-	<?php require 'Sidebar.php' ?>
-
 	<!-- ============================================================== -->
 	<!-- Start right Content here -->
 	<!-- ============================================================== -->
@@ -104,6 +102,7 @@
 									<th>Nama Ruangan</th>
 									<th>Lantai</th>
 									<th>Kapasitas</th>
+									<th>Kampus</th>
 									<th>Action</th>
 								</tr>
 								</thead>
@@ -114,6 +113,7 @@
 										<td><?= $key->nama_ruangan ?></td>
 										<td><?= $key->lantai ?></td>
 										<td><?= $key->kapasitas ?></td>
+										<td><?= $key->nama_kampus?></td>
 										<td>
 											<a href="<?php echo base_url() ?>ubah_ruangan/<?= $key->id ?>"><i
 													class="glyphicon glyphicon-edit"></i></a>

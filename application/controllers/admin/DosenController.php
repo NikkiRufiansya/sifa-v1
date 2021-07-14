@@ -16,6 +16,7 @@ class DosenController extends CI_Controller
 	{
 		$users['dosen'] = $this->DosenModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/dosen/Dosen', $users);
 		$this->load->view('partials/footer');
 	}
@@ -23,6 +24,7 @@ class DosenController extends CI_Controller
 	public function tambahDosen()
 	{
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/dosen/TambahDosen');
 		$this->load->view('partials/footer');
 	}
@@ -67,6 +69,7 @@ class DosenController extends CI_Controller
 		$data['dosen'] = $this->DosenModels->getDataById('dosen', $idDosen);
 		$data['users'] = $this->DosenModels->getDataById('users', $usersId);
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/dosen/UbahDosen', $data);
 		$this->load->view('partials/footer');
 	}

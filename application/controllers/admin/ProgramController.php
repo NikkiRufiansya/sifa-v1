@@ -15,6 +15,7 @@ class ProgramController extends CI_Controller
 	{
 		$program['program'] = $this->ProgramModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/program/Program', $program);
 		$this->load->view('partials/footer');
 	}
@@ -22,6 +23,7 @@ class ProgramController extends CI_Controller
 	public function tambahProgram()
 	{
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/program/TambahProgram');
 		$this->load->view('partials/footer');
 	}
@@ -41,6 +43,7 @@ class ProgramController extends CI_Controller
 		$idProgram = array('id' => $id);
 		$program['program'] = $this->ProgramModels->getDataById($idProgram);
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/program/UbahProgram', $program);
 		$this->load->view('partials/footer');
 	}

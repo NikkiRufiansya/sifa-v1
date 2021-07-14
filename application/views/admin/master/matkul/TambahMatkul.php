@@ -63,7 +63,6 @@
 	<!-- Top Bar End -->
 
 
-	<?php require 'Sidebar.php' ?>
 
 	<!-- ============================================================== -->
 	<!-- Start right Content here -->

@@ -15,6 +15,7 @@ class DashboardController extends CI_Controller
 	public function index()
 	{
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/Dashboard');
 		$this->load->view('partials/footer');
 	}
@@ -23,6 +24,7 @@ class DashboardController extends CI_Controller
 	{
 		$users['users'] = $this->AdminModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/menejemenUsers/Administrator', $users);
 		$this->load->view('partials/footer');
 	}
@@ -30,6 +32,7 @@ class DashboardController extends CI_Controller
 	public function tambahAdmin()
 	{
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/menejemenUsers/TambahAdmin');
 		$this->load->view('partials/footer');
 	}
@@ -53,6 +56,7 @@ class DashboardController extends CI_Controller
 		$idUsers = array('id' => $id);
 		$users['users'] = $this->AdminModels->getDataById($idUsers);
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/menejemenUsers/UbahAdmin', $users);
 		$this->load->view('partials/footer');
 	}

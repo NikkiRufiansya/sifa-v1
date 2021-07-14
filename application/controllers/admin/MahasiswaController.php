@@ -19,6 +19,7 @@ class MahasiswaController extends CI_Controller
 	{
 		$data['mahasiswa'] = $this->MahasiswaModels->getMahasiswa();
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/mahasiswa/Mahasiswa', $data);
 		$this->load->view('admin/master/mahasiswa/footer');
 	}
@@ -29,6 +30,7 @@ class MahasiswaController extends CI_Controller
 		$data['dosen'] = $this->DosenModels->getAllData();
 		$data['program'] = $this->ProgramModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/mahasiswa/TambahMahasiswa', $data);
 		$this->load->view('admin/master/mahasiswa/footer');
 	}
@@ -79,6 +81,7 @@ class MahasiswaController extends CI_Controller
 		$data['dosen'] = $this->DosenModels->getAllData();
 		$data['program'] = $this->ProgramModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/mahasiswa/UbahMahasiswa', $data);
 		$this->load->view('admin/master/mahasiswa/footer');
 	}
