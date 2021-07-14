@@ -9,7 +9,8 @@
 
 		<!-- LOGO -->
 		<div class="topbar-left">
-			<a href="../index.html" class="logo"><span>Zir<span>cos</span></span><i class="mdi mdi-layers"></i></a>
+			<a href="<?php base_url('dashboard')?>" class="logo"><span>Zir<span>cos</span></span><i class="mdi mdi-layers"></i></a>
+
 			<!-- Image logo -->
 			<!--<a href="index.html" class="logo">-->
 			<!--<span>-->
@@ -26,16 +27,7 @@
 			<div class="container">
 
 				<!-- Navbar-left -->
-				<ul class="nav navbar-nav navbar-left">
-					<li>
-						<button class="button-menu-mobile open-left waves-effect">
-							<i class="mdi mdi-menu"></i>
-						</button>
-					</li>
 
-
-
-				</ul>
 
 				<!-- Right(Notification) -->
 				<ul class="nav navbar-nav navbar-right">

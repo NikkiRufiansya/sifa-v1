@@ -24,16 +24,7 @@
 		<div class="navbar navbar-default" role="navigation">
 			<div class="container">
 
-				<!-- Navbar-left -->
-				<ul class="nav navbar-nav navbar-left">
-					<li>
-						<button class="button-menu-mobile open-left waves-effect">
-							<i class="mdi mdi-menu"></i>
-						</button>
-					</li>
 
-
-				</ul>
 
 				<!-- Right(Notification) -->
 				<ul class="nav navbar-nav navbar-right">

@@ -11,7 +11,7 @@
 				</li>
 
 				<li class="has_sub">
-					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> Akademik </span> <span class="menu-arrow"></span></a>
+					<a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-book"></i> <span> Akademik </span> <span class="menu-arrow"></span></a>
 					<ul class="list-unstyled">
 						<li><a href="ui-buttons.html">Kalender Akademik</a></li>
 						<li><a href="ui-buttons.html">Penjadwalan Kuliah</a></li>
@@ -43,8 +43,7 @@
 				</li>
 
 				<li class="has_sub">
-					<a href="javascript:void(0);" class="waves-effect"><i
-							class="mdi mdi-layers"></i><span> Keuangan </span> <span
+					<a href="javascript:void(0);" class="waves-effect"><i class="ion-cash"></i><span> Keuangan </span> <span
 							class="menu-arrow"></span></a>
 					<ul class="list-unstyled">
 						<li><a href="admin-sweet-alert.html">Data COA</a></li>
@@ -57,24 +56,24 @@
 				</li>
 
 				<li class="has_sub">
-					<a href="javascript:void(0);" class="waves-effect"><i
-							class="mdi mdi-layers"></i><span> Marketing </span> <span
+					<a href="javascript:void(0);" class="waves-effect"><i class="ion-cube"></i><span> Marketing </span> <span
 							class="menu-arrow"></span></a>
 					<ul class="list-unstyled">
-						<li><a href="admin-sweet-alert.html">Sweet Alert</a></li>
+						<li><a href="admin-sweet-alert.html">Agenda Kegiatan Marketing</a></li>
+						<li><a href="admin-sweet-alert.html">Agenda Kunjungan</a></li>
+						<li><a href="admin-sweet-alert.html">List Client</a></li>
+						<li><a href="admin-sweet-alert.html">PMB</a></li>
+
+
 					</ul>
 				</li>
 
 				<li class="has_sub">
-					<a href="javascript:void(0);" class="waves-effect"><i
-							class="mdi mdi-layers"></i><span> Manajemen Users </span> <span
-							class="menu-arrow"></span></a>
+					<a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-user"></i><span> Manajemen Users </span> <span class="menu-arrow"></span></a>
 					<ul class="list-unstyled">
 						<li><a href="<?php echo base_url('staff_admin')?>">Staff Administrator</a></li>
 					</ul>
 				</li>
-
-
 
 			</ul>
 		</div>
