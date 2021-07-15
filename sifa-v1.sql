@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 14, 2021 at 05:43 AM
+-- Generation Time: Jul 15, 2021 at 09:02 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.5
 
@@ -84,6 +84,65 @@ INSERT INTO `identitas_institusi` (`id`, `kode_hukum`, `nama_identitas`, `tangga
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jadwal_kuliah`
+--
+
+CREATE TABLE `jadwal_kuliah` (
+  `id` int(11) NOT NULL,
+  `prodi_id` int(11) NOT NULL,
+  `program_id` int(11) NOT NULL,
+  `matkul_id` int(11) NOT NULL,
+  `tahun` int(11) NOT NULL,
+  `hari` varchar(20) NOT NULL,
+  `jadwal_masuk` time NOT NULL,
+  `jadwal_selesai` time NOT NULL,
+  `nama_kelas` varchar(100) NOT NULL,
+  `kampus_id` varchar(100) NOT NULL,
+  `ruangan` varchar(100) NOT NULL,
+  `dosen` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jadwal_kuliah`
+--
+
+INSERT INTO `jadwal_kuliah` (`id`, `prodi_id`, `program_id`, `matkul_id`, `tahun`, `hari`, `jadwal_masuk`, `jadwal_selesai`, `nama_kelas`, `kampus_id`, `ruangan`, `dosen`) VALUES
+(1, 3, 2, 1, 2021, 'kamis', '13:00:00', '15:24:00', 'Pemprograman Dasar 1', '2', 'TI1', 'Dosen IT'),
+(2, 2, 2, 5, 2021, 'rabu', '14:31:00', '15:31:00', 'Kecantikan Kulit Pada Wajah Wanita', '3', 'KA2', 'Dosen Kecantikan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kalender_akademik`
+--
+
+CREATE TABLE `kalender_akademik` (
+  `id` int(11) NOT NULL,
+  `tahun` int(11) NOT NULL,
+  `nama_kalender` varchar(100) NOT NULL,
+  `prodi_id` int(11) NOT NULL,
+  `program_id` int(11) NOT NULL,
+  `krs_mulai` date NOT NULL,
+  `krs_selesai` date NOT NULL,
+  `uts_mulai` date NOT NULL,
+  `uts_selesai` date NOT NULL,
+  `uas_mulai` date NOT NULL,
+  `uas_selesai` date NOT NULL,
+  `input_nilai_mulai` date NOT NULL,
+  `input_nilai_selesai` date NOT NULL,
+  `cetak_khs` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kalender_akademik`
+--
+
+INSERT INTO `kalender_akademik` (`id`, `tahun`, `nama_kalender`, `prodi_id`, `program_id`, `krs_mulai`, `krs_selesai`, `uts_mulai`, `uts_selesai`, `uas_mulai`, `uas_selesai`, `input_nilai_mulai`, `input_nilai_selesai`, `cetak_khs`) VALUES
+(3, 2021, 'Tahun Ajaran 2021', 3, 2, '2021-07-26', '2021-08-06', '2021-08-30', '2021-08-30', '2021-09-27', '2021-10-05', '2021-12-28', '2021-12-28', '2022-01-11');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `kampus`
 --
 
@@ -158,7 +217,7 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id`, `users_id`, `prodi_id`, `kurikulum_id`, `program`, `nama`, `nim`, `angkatan`, `email`, `telepone`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `status_sipil`, `alamat`, `status_awal`, `ka_prodi`, `foto`) VALUES
-(1, 25, 3, 3, 'REGULER', 'Nikky Rufiansya', '151111035', '3', '151111035@mhs.stiki.ac.id', '08123456789', 'Banjarmasin', '1997-02-13', 'pria', 'islam', '', 'Banjarmasin', 'baru', 'Ashlih QA', 'default_profile.png');
+(1, 25, 3, 2, 'REGULER', 'Nikky Rufiansya', '151111035', '3', '151111035@mhs.stiki.ac.id', '08123456789', 'Banjarmasin', '1997-02-13', 'pria', 'islam', 'belum_menikah', 'Banjarmasin', 'baru', 'Ashlih QA', 'default_profile.png');
 
 -- --------------------------------------------------------
 
@@ -184,7 +243,8 @@ CREATE TABLE `matkul` (
 --
 
 INSERT INTO `matkul` (`id`, `prodi_id`, `kurikulum_id`, `kelompok_matkul`, `jenis_matkul`, `kode_matkul`, `nama_matkul`, `semester`, `sks`, `penanggung_jawab`) VALUES
-(1, 3, 2, 'khusus', 'wajib', 'PD1', 'Pemprograman Dasar 1', '3', '3', 'Dosen Pertama');
+(1, 3, 2, 'khusus', 'wajib', 'PD1', 'Pemprograman Dasar 1', '3', '3', 'Dosen Pertama'),
+(5, 2, 4, 'umum', 'wajib', 'KC0001', 'Kecantikan Kulit Pada Wajah', '2', '3', 'Dosen Kecantikan');
 
 -- --------------------------------------------------------
 
@@ -248,7 +308,7 @@ CREATE TABLE `ruangan` (
 --
 
 INSERT INTO `ruangan` (`id`, `kampus_id`, `kode_ruangan`, `nama_ruangan`, `lantai`, `kapasitas`) VALUES
-(2, '2', 'A001', 'A1', 1, 30),
+(2, '2', 'TI001', 'TI1', 1, 30),
 (3, '3', 'KA02', 'KA2', 1, 40);
 
 -- --------------------------------------------------------
@@ -259,7 +319,7 @@ INSERT INTO `ruangan` (`id`, `kampus_id`, `kode_ruangan`, `nama_ruangan`, `lanta
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(10) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `password` varchar(250) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -274,11 +334,11 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `password`, `nama`, `email`, `telepone`, `level`) VALUES
 (1, 'admin', '0192023a7bbd73250516f069df18b500', 'Administrator', 'admin@admin.com', '08123456789', 'admin'),
 (12, 'dosen1', '0192023a7bbd73250516f069df18b500', 'Dosen IT', 'dosen1@mail.com', '0812345678', 'dosen'),
-(15, 'akademik', '0192023a7bbd73250516f069df18b500', 'akademik', 'aka@mail.com', '08123456789', 'akademik'),
+(15, 'akademik', '0192023a7bbd73250516f069df18b500', 'akademik', 'akademik@mail.com', '08123456789', 'akademik'),
 (16, 'marketing', '0192023a7bbd73250516f069df18b500', 'marketing', 'marketing@mail.com', '08123456789', 'marketing'),
 (17, 'keuangan', '0192023a7bbd73250516f069df18b500', 'keuangan', 'keuangan@mail.com', '0812345677', 'keuangan'),
 (24, 'dosen2', '0192023a7bbd73250516f069df18b500', 'Dosen Kecantikan', 'dosen2@gmail.com', '08123332434234', 'dosen'),
-(25, 'nikkirufia', '0192023a7bbd73250516f069df18b500', 'Nikky Rufiansya', '151111035@mhs.stiki.ac.id', '08123456789', 'mahasiswa'),
+(25, 'nikkirufiansya', '0192023a7bbd73250516f069df18b500', 'Nikky Rufiansya', '151111035@mhs.stiki.ac.id', '08123456789', 'mahasiswa'),
 (27, 'admin2', '0192023a7bbd73250516f069df18b500', 'Nikky', 'admin2@mail.com', '0812312321', 'admin');
 
 --
@@ -295,6 +355,18 @@ ALTER TABLE `dosen`
 -- Indexes for table `identitas_institusi`
 --
 ALTER TABLE `identitas_institusi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `jadwal_kuliah`
+--
+ALTER TABLE `jadwal_kuliah`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kalender_akademik`
+--
+ALTER TABLE `kalender_akademik`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -362,6 +434,18 @@ ALTER TABLE `identitas_institusi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `jadwal_kuliah`
+--
+ALTER TABLE `jadwal_kuliah`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `kalender_akademik`
+--
+ALTER TABLE `kalender_akademik`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `kampus`
 --
 ALTER TABLE `kampus`
@@ -377,13 +461,13 @@ ALTER TABLE `kurikulum`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `matkul`
 --
 ALTER TABLE `matkul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `program`
@@ -407,7 +491,7 @@ ALTER TABLE `ruangan`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

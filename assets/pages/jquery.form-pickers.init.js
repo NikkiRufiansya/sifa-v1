@@ -36,9 +36,19 @@ jQuery(document).ready(function () {
         multidate: true,
         multidateSeparator: ","
     });
-    jQuery('#date-range').datepicker({
+    jQuery('#date-range-krs').datepicker({
         toggleActive: true
     });
+	jQuery('#date-range-uts').datepicker({
+		toggleActive: true
+	});
+	jQuery('#date-range-uas').datepicker({
+		toggleActive: true
+	});
+	jQuery('#date-range-input-nilai').datepicker({
+		toggleActive: true
+	});
+
 
     //Clock Picker
     $('.clockpicker').clockpicker({

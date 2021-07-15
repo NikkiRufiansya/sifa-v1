@@ -13,8 +13,8 @@
 				<li class="has_sub">
 					<a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-book"></i> <span> Akademik </span> <span class="menu-arrow"></span></a>
 					<ul class="list-unstyled">
-						<li><a href="ui-buttons.html">Kalender Akademik</a></li>
-						<li><a href="ui-buttons.html">Penjadwalan Kuliah</a></li>
+						<li><a href="<?php echo base_url('admin_kalender_akademik')?>">Kalender Akademik</a></li>
+						<li><a href="<?php echo base_url('admin_jadwal_kuliah')?>">Penjadwalan Kuliah</a></li>
 						<li><a href="ui-buttons.html">Daftar Ulang Mahasiswa</a></li>
 						<li><a href="ui-buttons.html">KRS Mahasiswa</a></li>
 						<li><a href="ui-buttons.html">Input Nilai Mahasiswa</a></li>

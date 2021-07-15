@@ -9,7 +9,7 @@
 	<!-- App favicon -->
 	<link rel="shortcut icon" href="<?php echo base_url()?>assets/images/favicon.ico">
 	<!-- App title -->
-	<title>Zircos - Responsive Admin Dashboard Template</title>
+	<title>Sistem Informasi Akademik</title>
 
 	<!--Morris Chart CSS -->
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/morris/morris.css">
@@ -39,5 +39,11 @@
 	<![endif]-->
 
 	<script src="<?php echo base_url()?>assets/js/modernizr.min.js"></script>
+
+	<link href="<?php echo base_url()?>assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
 </head>

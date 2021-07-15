@@ -19,6 +19,7 @@ class MahasiswaController extends CI_Controller
 	{
 		$data['mahasiswa'] = $this->MahasiswaModels->getMahasiswa();
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/mahasiswa/Mahasiswa', $data);
 		$this->load->view('admin/master/mahasiswa/footer');
@@ -30,6 +31,7 @@ class MahasiswaController extends CI_Controller
 		$data['dosen'] = $this->DosenModels->getAllData();
 		$data['program'] = $this->ProgramModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/mahasiswa/TambahMahasiswa', $data);
 		$this->load->view('admin/master/mahasiswa/footer');
@@ -60,6 +62,7 @@ class MahasiswaController extends CI_Controller
 			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
 			'jenis_kelamin' => $this->input->post('jenis_kelamin'),
 			'agama' => $this->input->post('agama'),
+			'status_sipil' => $this->input->post('status_sipil'),
 			'alamat' => $this->input->post('alamat'),
 			'status_awal' => $this->input->post('status_awal'),
 			'ka_prodi' => $this->input->post('ka_prodi'),
@@ -81,6 +84,7 @@ class MahasiswaController extends CI_Controller
 		$data['dosen'] = $this->DosenModels->getAllData();
 		$data['program'] = $this->ProgramModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/mahasiswa/UbahMahasiswa', $data);
 		$this->load->view('admin/master/mahasiswa/footer');
@@ -114,6 +118,7 @@ class MahasiswaController extends CI_Controller
 				'tanggal_lahir' => $this->input->post('tanggal_lahir'),
 				'jenis_kelamin' => $this->input->post('jenis_kelamin'),
 				'agama' => $this->input->post('agama'),
+				'status_sipil' => $this->input->post('status_sipil'),
 				'alamat' => $this->input->post('alamat'),
 				'status_awal' => $this->input->post('status_awal'),
 				'ka_prodi' => $this->input->post('ka_prodi'),
@@ -145,6 +150,7 @@ class MahasiswaController extends CI_Controller
 				'tanggal_lahir' => $this->input->post('tanggal_lahir'),
 				'jenis_kelamin' => $this->input->post('jenis_kelamin'),
 				'agama' => $this->input->post('agama'),
+				'status_sipil' => $this->input->post('status_sipil'),
 				'alamat' => $this->input->post('alamat'),
 				'status_awal' => $this->input->post('status_awal'),
 				'ka_prodi' => $this->input->post('ka_prodi'),

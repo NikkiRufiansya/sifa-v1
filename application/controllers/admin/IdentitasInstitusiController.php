@@ -15,6 +15,7 @@ class IdentitasInstitusiController extends CI_Controller
 	{
 		$institusi['institusi'] = $this->InstitusiModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/identitas/IdentitasInstitusi', $institusi);
 		$this->load->view('partials/footer');
@@ -23,6 +24,7 @@ class IdentitasInstitusiController extends CI_Controller
 	public function tambahInstitusi()
 	{
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/identitas/TambahInstitusi');
 		$this->load->view('partials/footer');
@@ -54,6 +56,7 @@ class IdentitasInstitusiController extends CI_Controller
 		$idInstitusi = array('id' => $id);
 		$institusi['institusi'] = $this->InstitusiModels->getDataById($idInstitusi);
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/identitas/UbahInstitusi', $institusi);
 		$this->load->view('partials/footer');

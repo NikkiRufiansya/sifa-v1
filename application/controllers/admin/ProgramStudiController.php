@@ -15,6 +15,7 @@ class ProgramStudiController extends CI_Controller
 	{
 		$studi['studi'] = $this->ProgramStudiModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/programStudi/ProgramStudi', $studi);
 		$this->load->view('partials/footer');
@@ -23,6 +24,7 @@ class ProgramStudiController extends CI_Controller
 	public function tambahProgramStudi()
 	{
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/programStudi/TambahProgramStudi');
 		$this->load->view('partials/footer');
@@ -45,6 +47,7 @@ class ProgramStudiController extends CI_Controller
 		$idProgramStudi = array('id' => $id);
 		$studi['studi'] = $this->ProgramStudiModels->getDataById($idProgramStudi);
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/programStudi/UbahProgramStudi', $studi);
 		$this->load->view('partials/footer');

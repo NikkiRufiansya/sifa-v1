@@ -4,6 +4,8 @@
 <div id="wrapper">
 
 
+
+
 	<!-- ============================================================== -->
 	<!-- Start right Content here -->
 	<!-- ============================================================== -->
@@ -14,7 +16,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="page-title-box">
-							<h4 class="page-title">Dashboard Program </h4>
+							<h4 class="page-title">Dashboard Jadwal Kuliah </h4>
 							<ol class="breadcrumb p-0 m-0">
 								<li>
 									<a href="#">Zircos</a>
@@ -23,7 +25,7 @@
 									<a href="#">Master</a>
 								</li>
 								<li class="active">
-									Program
+									Jadwal Kuliah
 								</li>
 							</ol>
 							<div class="clearfix"></div>
@@ -32,25 +34,44 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<h4 class="m-t-0 header-title"><b>Ubah Data Program </b></h4>
+						<h4 class="m-t-0 header-title"><b>Data Jadwal Kuliah</b></h4>
 						<div class="card-box table-responsive">
-							<?php foreach ($program as $key):?>
-							<form action="<?php echo base_url('proses_ubah_program')?>" method="post">
-								<div class="form-group">
-									<label for="">Kode Program</label>
-									<input type="hidden" value="<?= $key['id']?>" name="id">
-									<input type="text" value="<?= $key['kode_program']?>" name="kode_program" class="form-control" id="" placeholder="Kode Program">
-								</div>
-
-								<div class="form-group">
-									<label for="">Nama Program</label>
-									<input type="text" value="<?= $key['nama_program']?>" name="nama_program" class="form-control" id="" placeholder="Nama Program">
-								</div>
-								<div class="form-group">
-									<input type="submit" value="Simpan" class="btn btn-success">
-								</div>
-							</form>
-							<?php endforeach;?>
+							<a href="<?php echo base_url('tambah_jadwal') ?>" class="btn btn-primary"
+							   style="margin-bottom: 20px;">Tambah jadwal </a>
+							<table id="datatable" class="table table-striped table-bordered">
+								<thead>
+								<tr>
+									<th>Nama Kelas</th>
+									<th>Matkul</th>
+									<th>Semester</th>
+									<th>Kampus</th>
+									<th>Ruangan</th>
+									<th>Prodi</th>
+									<th>Dosen Pengampu</th>
+									<th>Action</th>
+								</tr>
+								</thead>
+								<tbody>
+								<?php foreach ($jadwal as $key): ?>
+									<tr>
+										<td><?= $key->nama_kelas?></td>
+										<td><?= $key->nama_matkul?></td>
+										<td><?= $key->semester?></td>
+										<td><?= $key->nama_kampus?></td>
+										<td><?= $key->ruangan?></td>
+										<td><?= $key->nama_prodi?></td>
+										<td><?= $key->dosen?></td>
+										<td>
+											<a href="<?php echo base_url() ?>ubah_jadwal/<?= $key->id ?>"><i
+													class="glyphicon glyphicon-edit"></i></a>
+											||
+											<a href="<?php echo base_url() ?>hapus_jadwal/<?= $key->id ?>"><i
+													class="glyphicon glyphicon-trash"></i></a>
+										</td>
+									</tr>
+								<?php endforeach; ?>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>

@@ -45,16 +45,6 @@
 <script src="<?php echo base_url()?>assets/plugins/datatables/dataTables.fixedColumns.min.js"></script>
 <script src="<?php echo base_url()?>assets/plugins/datatables/responsive.bootstrap.min.js"></script>
 <script src="<?php echo base_url()?>assets/pages/jquery.datatables.init.js"></script>
-
-
-<script src="<?php echo base_url()?>assets/plugins/moment/moment.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/timepicker/bootstrap-timepicker.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-<script src="assets/pages/jquery.form-pickers.init.js"></script>
-
 <script>
 	$(document).ready(function () {
 		$('#datatable').dataTable();
@@ -88,6 +78,59 @@
 	TableManageButtons.init();
 
 </script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#prodi').change(function(){
+			var id=$(this).val();
+			console.log(id)
+			$.ajax({
+				url : "<?php echo site_url('get_matkul');?>",
+				method : "POST",
+				data : {prodi_id: id},
+				async : true,
+				dataType : 'json',
+				success: function(data){
+					var html = '';
+					var i;
+					for(i=0; i<data.length; i++){
+						html += '<option value='+data[i].id+'>'+data[i].nama_matkul+'</option>';
+					}
+					$('#matkul').html(html);
+
+				}
+			});
+			return false;
+		});
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#kampus').change(function(){
+			var id=$(this).val();
+			console.log(id)
+			$.ajax({
+				url : "<?php echo site_url('get_ruangan');?>",
+				method : "POST",
+				data : {kampus_id: id},
+				async : true,
+				dataType : 'json',
+				success: function(data){
+					var html = '';
+					var i;
+					for(i=0; i<data.length; i++){
+						html += '<option value='+data[i].nama_ruangan+'>'+data[i].nama_ruangan+'</option>';
+					}
+					$('#ruangan').html(html);
+				}
+			});
+			return false;
+		});
+	});
+</script>
+
+
 
 
 

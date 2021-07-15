@@ -15,6 +15,7 @@ class KampusController extends CI_Controller
 	{
 		$kampus['kampus'] = $this->KampusModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/kampus/Kampus', $kampus);
 		$this->load->view('partials/footer');
@@ -23,6 +24,7 @@ class KampusController extends CI_Controller
 	public function tambahKampus()
 	{
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/kampus/TambahKampus');
 		$this->load->view('partials/footer');
@@ -44,6 +46,7 @@ class KampusController extends CI_Controller
 		$idKampus = array('id' => $id);
 		$kampus['kampus'] = $this->KampusModels->getDataById($idKampus);
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/kampus/UbahKampus', $kampus);
 		$this->load->view('partials/footer');

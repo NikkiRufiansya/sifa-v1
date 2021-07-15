@@ -16,6 +16,7 @@ class KurikulumController extends CI_Controller
 	{
 		$kurikulum['kurikulum'] = $this->KurikulumModels->getDataKurikulumAndProdi();
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/kurikulum/Kurikulum', $kurikulum);
 		$this->load->view('partials/footer');
@@ -25,6 +26,7 @@ class KurikulumController extends CI_Controller
 	{
 		$prodi['prodi'] = $this->ProgramStudiModels->getAllData();
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/kurikulum/TambahKurikulum', $prodi);
 		$this->load->view('partials/footer');
@@ -47,6 +49,7 @@ class KurikulumController extends CI_Controller
 		$kurikulum['prodi'] = $this->ProgramStudiModels->getAllData();
 		$kurikulum['kurikulum'] = $this->KurikulumModels->getDataById($idKurikulum);
 		$this->load->view('partials/head');
+		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
 		$this->load->view('admin/master/kurikulum/UbahKurikulum', $kurikulum);
 		$this->load->view('partials/footer');

@@ -140,7 +140,25 @@ $route['hapus_matkul/(:num)'] = 'admin/MatkulController/hapusMatkul/$1';
 //admin Mahasiswa
 $route['admin_mahasiswa'] = 'admin/MahasiswaController';
 $route['tambah_mahasiswa'] = 'admin/MahasiswaController/tambahMahasiswa';
-$route['proses_tambah_mahasiwa'] = 'admin/MahasiswaController/prosesTambahMahasiswa';
+$route['proses_tambah_mahasiswa'] = 'admin/MahasiswaController/prosesTambahMahasiswa';
 $route['ubah_mahasiswa/(:num)'] = 'admin/MahasiswaController/ubahMahasiswa/$1';
 $route['proses_ubah_mahasiswa'] = 'admin/MahasiswaController/prosesUbahMahasiswa';
 $route['hapus_mahasiswa/(:num)/(:num)'] = 'admin/MahasiswaController/hapusMahasiswa/$1/$2';
+
+//admin kalender Akademik
+$route['admin_kalender_akademik'] = 'admin/KalenderAkademikController';
+$route['tambah_kalender'] = 'admin/KalenderAkademikController/tambahKalender';
+$route['proses_tambah_kalender'] = 'admin/KalenderAkademikController/prosesTambahKalender';
+$route['ubah_kalender/(:num)'] = 'admin/KalenderAkademikController/ubahKalender/$1';
+$route['proses_ubah_kalender'] = 'admin/KalenderAkademikController/prosesUbahKalender';
+$route['hapus_kalender/(:num)'] = 'admin/KalenderAkademikController/hapusKalender/$1';
+
+//admin jadwal kuliah
+$route['admin_jadwal_kuliah'] = 'admin/JadwalKuliahController';
+$route['tambah_jadwal'] = 'admin/JadwalKuliahController/tambahJadwal';
+$route['get_matkul'] = 'admin/JadwalKuliahController/getMatkul';
+$route['get_ruangan'] = 'admin/JadwalKuliahController/getRuangan';
+$route['proses_tambah_jadwal'] = 'admin/JadwalKuliahController/prosesTambahJadwal';
+$route['ubah_jadwal/(:num)'] = 'admin/JadwalKuliahController/ubahJadwal/$1';
+$route['proses_ubah_jadwal'] = 'admin/JadwalKuliahController/prosesUbahJadwal';
+$route['hapus_jadwal/(:num)'] = 'admin/JadwalKuliahController/hapusJadwal/$1';
