@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 15, 2021 at 09:02 AM
+-- Generation Time: Jul 20, 2021 at 09:26 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.5
 
@@ -20,6 +20,76 @@ SET time_zone = "+00:00";
 --
 -- Database: `sifa-v1`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `absensi_dosen`
+--
+
+CREATE TABLE `absensi_dosen` (
+  `id` int(11) NOT NULL,
+  `dosen_id` int(11) NOT NULL,
+  `status` enum('Hadir','Izin','Alpha','Sakit') NOT NULL,
+  `tanggal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `absensi_dosen`
+--
+
+INSERT INTO `absensi_dosen` (`id`, `dosen_id`, `status`, `tanggal`) VALUES
+(1, 7, 'Hadir', '2021-07-19'),
+(2, 8, 'Hadir', '2021-07-19'),
+(3, 3, 'Hadir', '2021-07-19'),
+(4, 4, 'Hadir', '2021-07-19'),
+(5, 6, 'Hadir', '2021-07-19'),
+(6, 10, 'Hadir', '2021-07-19'),
+(7, 5, 'Hadir', '2021-07-19'),
+(8, 9, 'Hadir', '2021-07-19'),
+(9, 11, 'Hadir', '2021-07-19'),
+(10, 7, 'Sakit', '2021-07-20'),
+(11, 8, 'Hadir', '2021-07-20'),
+(12, 3, 'Hadir', '2021-07-20'),
+(13, 4, 'Hadir', '2021-07-20'),
+(14, 6, 'Hadir', '2021-07-20'),
+(15, 10, 'Sakit', '2021-07-20'),
+(16, 5, 'Izin', '2021-07-20'),
+(17, 9, 'Hadir', '2021-07-20'),
+(18, 11, 'Hadir', '2021-07-20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `absensi_mahasiswa`
+--
+
+CREATE TABLE `absensi_mahasiswa` (
+  `id` int(11) NOT NULL,
+  `mahasiswa_id` int(11) NOT NULL,
+  `jadwal_id` int(11) NOT NULL,
+  `status` enum('Hadir','Sakit','Izin','Alpa') NOT NULL,
+  `pertemuan` int(11) NOT NULL,
+  `tanggal_kahadiran` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `absensi_mahasiswa`
+--
+
+INSERT INTO `absensi_mahasiswa` (`id`, `mahasiswa_id`, `jadwal_id`, `status`, `pertemuan`, `tanggal_kahadiran`) VALUES
+(35, 1, 5, 'Hadir', 1, '2021-07-17'),
+(36, 4, 5, 'Hadir', 1, '2021-07-17'),
+(37, 1, 5, 'Hadir', 2, '2021-07-24'),
+(38, 4, 5, 'Sakit', 2, '2021-07-24'),
+(39, 1, 6, 'Hadir', 1, '2021-07-17'),
+(40, 4, 6, 'Hadir', 1, '2021-07-17'),
+(41, 1, 8, 'Sakit', 1, '2021-07-17'),
+(42, 4, 8, 'Hadir', 1, '2021-07-17'),
+(43, 1, 5, 'Hadir', 3, '2021-07-26'),
+(44, 4, 5, 'Hadir', 3, '2021-07-26'),
+(45, 1, 5, 'Hadir', 4, '2021-08-02'),
+(46, 4, 5, 'Hadir', 4, '2021-08-02');
 
 -- --------------------------------------------------------
 
@@ -49,7 +119,14 @@ CREATE TABLE `dosen` (
 
 INSERT INTO `dosen` (`id`, `users_id`, `nama`, `nik`, `agama`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `email`, `telepone`, `gelar`, `jenis_kelamin`, `foto`) VALUES
 (3, 12, 'Dosen IT', '39722908475832', 'islam', 'banyuwangi', 'Malang', '1992-02-02', 'dosen1@mail.com', '0812345678', 'S2 Ilmu Komputer', 'pria', 'default_profile.png'),
-(4, 24, 'Dosen Kecantikan', '0348293749327', 'islam', 'Malang', 'Banyuwangi', '2021-07-06', 'dosen2@gmail.com', '08123332434234', 'S2', 'wanita', 'default_profile.png');
+(4, 24, 'Dosen Kecantikan', '0348293749327', 'islam', 'Malang', 'Banyuwangi', '2021-07-06', 'dosen2@gmail.com', '08123332434234', 'S2', 'wanita', 'default_profile.png'),
+(5, 29, 'MOH IMRON DIMYATHI', '58001', 'islam', 'Banyuwangi', 'Nganjuk', '1984-11-08', 'imron@sifa.ac.id', '08000000', 'S.Kom', 'pria', 'default_profile.png'),
+(6, 30, 'IMRON HAMZAH, S.Kom', '58002', 'islam', 'banyuwangi', 'Banyuwangi', '2021-06-29', 'hamzah@sifa.ac.id', '080000', 'S.Kom', 'pria', 'default_profile.png'),
+(7, 31, 'ABDULLAH AZWAR ANAS', '101193', 'islam', 'Banyuwangi', 'Banyuwangi', '1993-11-10', 'azwar@sifa.ac.id', '08000', 'S.Kep', 'pria', 'default_profile.png'),
+(8, 32, 'ANIK WINARNI', '58004', 'islam', 'banyuwangi', 'Banyuwangi', '1992-02-20', 'anik@sifa.ac.id', '08000', 'ST', 'wanita', 'default_profile.png'),
+(9, 33, 'NIZA FARIKI, M.Pd', '58005', 'islam', 'Banyuwangi', '-', '2021-07-16', 'niza@sifa.ac.id', '08000', ' M.Pd', 'pria', 'default_profile.png'),
+(10, 34, 'M LUQMAN HADI, S.Kom', '58006', 'islam', '-', '-', '0000-00-00', 'lukman@sifa.ac.id', '-', 'S.Kom', 'pria', 'default_profile.png'),
+(11, 35, 'Siti Khomsatin, S.Pt, M.Si', '58007', 'islam', '-', '-', '0000-00-00', 'siti@sifa.ac.id', '-', ' S.Pt, M.Si', 'wanita', 'default_profile.png');
 
 -- --------------------------------------------------------
 
@@ -107,8 +184,42 @@ CREATE TABLE `jadwal_kuliah` (
 --
 
 INSERT INTO `jadwal_kuliah` (`id`, `prodi_id`, `program_id`, `matkul_id`, `tahun`, `hari`, `jadwal_masuk`, `jadwal_selesai`, `nama_kelas`, `kampus_id`, `ruangan`, `dosen`) VALUES
-(1, 3, 2, 1, 2021, 'kamis', '13:00:00', '15:24:00', 'Pemprograman Dasar 1', '2', 'TI1', 'Dosen IT'),
-(2, 2, 2, 5, 2021, 'rabu', '14:31:00', '15:31:00', 'Kecantikan Kulit Pada Wajah Wanita', '3', 'KA2', 'Dosen Kecantikan');
+(4, 3, 2, 6, 2021, 'senin', '08:00:00', '10:00:00', 'Fisika', '2', 'TI1', '8'),
+(5, 3, 2, 7, 2021, 'selasa', '08:00:00', '10:45:00', 'Bahasa Inggris 1', '2', 'TI1', '9'),
+(6, 3, 2, 8, 2021, 'rabu', '08:46:00', '10:46:00', 'K3LH', '2', 'TI1', '5'),
+(7, 3, 2, 9, 2021, 'kamis', '08:49:00', '08:49:00', 'ELEKTRONIKA', '2', 'TI1', '10'),
+(8, 3, 2, 11, 2021, 'rabu', '15:06:00', '17:06:00', 'Pemprograman Dasar 2', '2', 'TI1', '6'),
+(9, 2, 2, 12, 2021, 'senin', '08:50:00', '10:53:00', 'Kecantikan Kulit Pada Wajah', '3', 'KA2', '11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jadwal_matkul_mahasiswa`
+--
+
+CREATE TABLE `jadwal_matkul_mahasiswa` (
+  `id` int(11) NOT NULL,
+  `mahasiswa_id` int(11) NOT NULL,
+  `jadwal_id` int(11) NOT NULL,
+  `grade` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jadwal_matkul_mahasiswa`
+--
+
+INSERT INTO `jadwal_matkul_mahasiswa` (`id`, `mahasiswa_id`, `jadwal_id`, `grade`) VALUES
+(48, 4, 5, 'A'),
+(49, 4, 6, 'A'),
+(50, 4, 4, 'A'),
+(51, 4, 7, 'A'),
+(52, 1, 5, 'A'),
+(53, 1, 6, 'A'),
+(54, 1, 4, 'A'),
+(55, 1, 7, 'A'),
+(56, 4, 8, 'A'),
+(57, 1, 8, 'C'),
+(58, 5, 9, NULL);
 
 -- --------------------------------------------------------
 
@@ -209,15 +320,28 @@ CREATE TABLE `mahasiswa` (
   `alamat` varchar(500) NOT NULL,
   `status_awal` varchar(50) NOT NULL,
   `ka_prodi` varchar(150) NOT NULL,
-  `foto` text NOT NULL
+  `foto` text NOT NULL,
+  `nama_ayah` varchar(150) DEFAULT NULL,
+  `nik_ayah` varchar(250) DEFAULT NULL,
+  `nama_ibu` varchar(150) DEFAULT NULL,
+  `nik_ibu` varchar(250) DEFAULT NULL,
+  `no_tlpn_ortu` varchar(20) DEFAULT NULL,
+  `alamat_ortu` varchar(500) DEFAULT NULL,
+  `nama_sekolah` varchar(500) DEFAULT NULL,
+  `alamat_sekolah` varchar(500) DEFAULT NULL,
+  `kota_sekolah` varchar(100) DEFAULT NULL,
+  `tlpn_sekolah` varchar(20) DEFAULT NULL,
+  `email_sekolah` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`id`, `users_id`, `prodi_id`, `kurikulum_id`, `program`, `nama`, `nim`, `angkatan`, `email`, `telepone`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `status_sipil`, `alamat`, `status_awal`, `ka_prodi`, `foto`) VALUES
-(1, 25, 3, 2, 'REGULER', 'Nikky Rufiansya', '151111035', '3', '151111035@mhs.stiki.ac.id', '08123456789', 'Banjarmasin', '1997-02-13', 'pria', 'islam', 'belum_menikah', 'Banjarmasin', 'baru', 'Ashlih QA', 'default_profile.png');
+INSERT INTO `mahasiswa` (`id`, `users_id`, `prodi_id`, `kurikulum_id`, `program`, `nama`, `nim`, `angkatan`, `email`, `telepone`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `status_sipil`, `alamat`, `status_awal`, `ka_prodi`, `foto`, `nama_ayah`, `nik_ayah`, `nama_ibu`, `nik_ibu`, `no_tlpn_ortu`, `alamat_ortu`, `nama_sekolah`, `alamat_sekolah`, `kota_sekolah`, `tlpn_sekolah`, `email_sekolah`) VALUES
+(1, 25, 3, 2, 'REGULER', 'Nikky Rufiansya', '151111035', '1', '151111035@mhs.stiki.ac.id', '08123456789', 'Banjarmasin', '1997-02-13', 'pria', 'islam', 'belum_menikah', 'Banjarmasin', 'baru', 'Maulidi S.Kom,. M.Kom', 'profile.jpg', 'SUKARNO', '64050201017110013', 'NATANIA', '640502008790002', '081250415637', 'JL TEUKU UMAR RT.13 NUNUKAN', 'Madrasah Aliyah Al Iklhas', 'Kecamatan Nunukan Tengah', 'Nunukan', '-', 'alikhlasnnk@gmail.com'),
+(4, 36, 3, 2, 'REGULER', 'Yanti Yulianti', '151111000', '1', 'aa@aa', '-', '-', '0000-00-00', 'wanita', 'islam', 'belum_menikah', '-', 'baru', 'Maulidi S.Kom,. M.Kom', 'default_profile.png', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', ''),
+(5, 37, 2, 4, 'REGULER', 'Siska', '151000111', '1', 'siska@sifa.ac.id', '-', '-', '0000-00-00', 'wanita', 'islam', 'belum_menikah', '-', 'baru', '-', 'default_profile.png', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -243,8 +367,32 @@ CREATE TABLE `matkul` (
 --
 
 INSERT INTO `matkul` (`id`, `prodi_id`, `kurikulum_id`, `kelompok_matkul`, `jenis_matkul`, `kode_matkul`, `nama_matkul`, `semester`, `sks`, `penanggung_jawab`) VALUES
-(1, 3, 2, 'khusus', 'wajib', 'PD1', 'Pemprograman Dasar 1', '3', '3', 'Dosen Pertama'),
-(5, 2, 4, 'umum', 'wajib', 'KC0001', 'Kecantikan Kulit Pada Wajah', '2', '3', 'Dosen Kecantikan');
+(6, 3, 2, 'umum', 'wajib', 'AKD.1.009', 'FISIKA', '1', '4', 'ANIK WINARNI'),
+(7, 3, 2, 'umum', 'wajib', 'AKD.1.001 ', 'BAHASA INGGRIS 1', '1', '4', 'NIZA FARIKI, M.Pd'),
+(8, 3, 2, 'keahlian', 'wajib', 'AKD.1.003 ', 'K3LH', '1', '2', 'ABDULLAH AZWAR ANAS'),
+(9, 3, 2, 'keahlian', 'pilihan', 'TI.30801 ', 'ELEKTRONIKA (Kelistrikan)', '1', '2', 'M LUQMAN HADI, S.Kom'),
+(11, 3, 2, 'keahlian', 'wajib', 'PD002', 'Pemprograman Dasar 2', '2', '4', 'IMRON HAMZAH, S.Kom'),
+(12, 2, 4, 'umum', 'wajib', 'KC0001', 'Kecantikan Kulit Pada Wajah', '1', '3', 'Siti Khomsatin, S.Pt, M.Si');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengumuman`
+--
+
+CREATE TABLE `pengumuman` (
+  `id` int(11) NOT NULL,
+  `judul` text NOT NULL,
+  `isi` text NOT NULL,
+  `tanggal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pengumuman`
+--
+
+INSERT INTO `pengumuman` (`id`, `judul`, `isi`, `tanggal`) VALUES
+(2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', '<div id=\"lipsum\">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus mi pretium arcu ultrices mollis. Sed in auctor lorem, nec vestibulum velit. Duis cursus odio ac massa consectetur, eu congue urna egestas. Nulla facilisi. In fringilla magna ac facilisis pellentesque. Phasellus ligula justo, placerat sed viverra vel, tristique non nisl. In dapibus malesuada luctus.</p>\r\n<p>Praesent dolor diam, tempus id metus nec, ullamcorper venenatis nisl. Proin sit amet libero ultrices, pharetra ligula volutpat, posuere enim. Morbi eu tellus non ipsum vulputate sollicitudin ac a nisi. Suspendisse dignissim id neque vitae ullamcorper. Donec fringilla molestie ligula sed sollicitudin. Cras et neque ornare quam iaculis laoreet. Vivamus bibendum lobortis magna, at tristique libero porta vel. Nunc iaculis eget arcu ac aliquam. Aenean fringilla tempus lacus, sed rhoncus ex mollis eleifend. Phasellus sagittis arcu et dictum lacinia.</p>\r\n<p>Sed quis mauris erat. Cras imperdiet nibh ut urna elementum, in congue lectus ultrices. Nullam in justo consectetur nisl hendrerit lobortis. Cras placerat, tellus vitae lobortis hendrerit, enim nulla dignissim nibh, nec suscipit urna lorem quis nisl. Praesent imperdiet mi ullamcorper elit ultricies placerat. Integer ullamcorper convallis dui, lobortis malesuada massa sollicitudin lacinia. Cras at venenatis arcu. Cras turpis libero, condimentum sit amet mi quis, venenatis dictum felis. Duis diam sapien, tempor at varius vel, efficitur id nulla. Sed laoreet lacus gravida dolor consectetur bibendum. Sed quis felis suscipit, pretium dolor sed, eleifend tellus. Mauris purus nibh, laoreet eu tempor sit amet, luctus ut lectus. Pellentesque condimentum lectus vel diam cursus malesuada. Quisque tincidunt gravida consequat. Maecenas viverra, eros id ornare cursus, diam arcu bibendum quam, ac lobortis est metus nec dolor.</p>\r\n<p>Curabitur vitae quam sapien. Quisque ornare elit sed nisl convallis luctus. Pellentesque vehicula purus at ullamcorper ullamcorper. Donec porttitor est diam, et luctus nulla auctor vitae. Nulla eget lacinia tortor. Sed lacinia gravida lectus, non ornare justo sollicitudin et. Quisque scelerisque, felis non rhoncus faucibus, tortor magna placerat orci, eget ullamcorper justo risus mattis ex. Phasellus semper, odio at cursus tincidunt, eros eros auctor tortor, hendrerit porta tortor risus at nisl. Donec rutrum leo et ante pellentesque, at ornare metus rutrum. Integer dolor tellus, maximus sit amet justo vel, imperdiet faucibus odio. Donec id mauris sollicitudin enim tincidunt mollis non nec justo. Donec sit amet dui ac risus interdum blandit. Pellentesque tempor felis nec nibh accumsan hendrerit. Sed dignissim dignissim neque ut laoreet. Aenean porta mauris tellus, sit amet mattis ipsum finibus ac.</p>\r\n<p>Suspendisse in nisi sagittis, ultrices justo vitae, euismod velit. Cras placerat viverra tincidunt. Etiam scelerisque a orci ut viverra. Sed at vehicula erat. Nam et volutpat nunc, sit amet iaculis enim. Nullam lobortis orci erat, eu pharetra lacus fermentum vestibulum. Cras quis porttitor nisl. Sed mi urna, sagittis nec iaculis at, dignissim nec risus. Mauris consequat tellus sit amet turpis tempus rhoncus. Maecenas quis ullamcorper erat.</p>\r\n</div>\r\n<div id=\"generated\">Generated 5 paragraphs, 464 words, 3194 bytes of&nbsp;<a title=\"Lorem Ipsum\" href=\"https://www.lipsum.com/\">Lorem Ipsum</a></div>', '2021-07-19');
 
 -- --------------------------------------------------------
 
@@ -338,12 +486,33 @@ INSERT INTO `users` (`id`, `username`, `password`, `nama`, `email`, `telepone`, 
 (16, 'marketing', '0192023a7bbd73250516f069df18b500', 'marketing', 'marketing@mail.com', '08123456789', 'marketing'),
 (17, 'keuangan', '0192023a7bbd73250516f069df18b500', 'keuangan', 'keuangan@mail.com', '0812345677', 'keuangan'),
 (24, 'dosen2', '0192023a7bbd73250516f069df18b500', 'Dosen Kecantikan', 'dosen2@gmail.com', '08123332434234', 'dosen'),
-(25, 'nikkirufiansya', '0192023a7bbd73250516f069df18b500', 'Nikky Rufiansya', '151111035@mhs.stiki.ac.id', '08123456789', 'mahasiswa'),
-(27, 'admin2', '0192023a7bbd73250516f069df18b500', 'Nikky', 'admin2@mail.com', '0812312321', 'admin');
+(25, '151111035', '0192023a7bbd73250516f069df18b500', 'Nikky Rufiansya', '151111035@mhs.stiki.ac.id', '08123456789', 'mahasiswa'),
+(27, 'admin2', '0192023a7bbd73250516f069df18b500', 'Nikky', 'admin2@mail.com', '0812312321', 'admin'),
+(29, '58001', '0192023a7bbd73250516f069df18b500', 'MOH IMRON DIMYATHI', 'imron@sifa.ac.id', '08000000', 'dosen'),
+(30, '58002', '0192023a7bbd73250516f069df18b500', 'IMRON HAMZAH, S.Kom', 'hamzah@sifa.ac.id', '080000', 'dosen'),
+(31, '101193', '0192023a7bbd73250516f069df18b500', 'ABDULLAH AZWAR ANAS', 'azwar@sifa.ac.id', '08000', 'dosen'),
+(32, '58004', '0192023a7bbd73250516f069df18b500', 'ANIK WINARNI', 'anik@sifa.ac.id', '08000', 'dosen'),
+(33, '58005', '0192023a7bbd73250516f069df18b500', 'NIZA FARIKI, M.Pd', 'niza@sifa.ac.id', '08000', 'dosen'),
+(34, '58006', 'c8c18105dbd99fb9280f33d3f6c68c3e', 'M LUQMAN HADI, S.Kom', 'lukman@sifa.ac.id', '-', 'dosen'),
+(35, '58007', 'b19eed7dd2015d5bb3c2f5b82a4f431c', 'Siti Khomsatin, S.Pt, M.Si', 'siti@sifa.ac.id', '-', 'dosen'),
+(36, 'yanti', '0192023a7bbd73250516f069df18b500', 'Yanti Yulianti', 'aa@aa', '-', 'mahasiswa'),
+(37, 'siska', '0192023a7bbd73250516f069df18b500', 'Siska', 'siska@sifa.ac.id', '-', 'mahasiswa');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `absensi_dosen`
+--
+ALTER TABLE `absensi_dosen`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `absensi_mahasiswa`
+--
+ALTER TABLE `absensi_mahasiswa`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `dosen`
@@ -361,6 +530,12 @@ ALTER TABLE `identitas_institusi`
 -- Indexes for table `jadwal_kuliah`
 --
 ALTER TABLE `jadwal_kuliah`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `jadwal_matkul_mahasiswa`
+--
+ALTER TABLE `jadwal_matkul_mahasiswa`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -394,6 +569,12 @@ ALTER TABLE `matkul`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pengumuman`
+--
+ALTER TABLE `pengumuman`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `program`
 --
 ALTER TABLE `program`
@@ -422,10 +603,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `absensi_dosen`
+--
+ALTER TABLE `absensi_dosen`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `absensi_mahasiswa`
+--
+ALTER TABLE `absensi_mahasiswa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
 -- AUTO_INCREMENT for table `dosen`
 --
 ALTER TABLE `dosen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `identitas_institusi`
@@ -437,7 +630,13 @@ ALTER TABLE `identitas_institusi`
 -- AUTO_INCREMENT for table `jadwal_kuliah`
 --
 ALTER TABLE `jadwal_kuliah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `jadwal_matkul_mahasiswa`
+--
+ALTER TABLE `jadwal_matkul_mahasiswa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `kalender_akademik`
@@ -461,13 +660,19 @@ ALTER TABLE `kurikulum`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `matkul`
 --
 ALTER TABLE `matkul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `pengumuman`
+--
+ALTER TABLE `pengumuman`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `program`
@@ -491,7 +696,7 @@ ALTER TABLE `ruangan`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
