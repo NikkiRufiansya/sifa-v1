@@ -60,6 +60,7 @@ $route['logout'] = 'AuthController/logout';
 //Route Dashboard
 $route['dashboard'] = 'admin/DashboardController';
 
+/*level Admin*/
 
 //Admin manajemen Users
 $route['staff_admin'] = 'admin/DashboardController/staffAdmin';
@@ -162,3 +163,63 @@ $route['proses_tambah_jadwal'] = 'admin/JadwalKuliahController/prosesTambahJadwa
 $route['ubah_jadwal/(:num)'] = 'admin/JadwalKuliahController/ubahJadwal/$1';
 $route['proses_ubah_jadwal'] = 'admin/JadwalKuliahController/prosesUbahJadwal';
 $route['hapus_jadwal/(:num)'] = 'admin/JadwalKuliahController/hapusJadwal/$1';
+
+//KRS MAHASISWA
+$route['admin_krs_mahasiswa'] = 'admin/KrsController';
+$route['atur_krs_mhs'] = 'admin/KrsController/AturJadwalMahasiswa/';
+$route['pilih_matkul/(:num)'] = 'admin/KrsController/pilihMatkulSemester/$1';
+$route['simpan_krs'] = 'admin/KrsController/simpanKrs';
+$route['lihat_krs/(:num)'] = 'admin/KrsController/lihatKrs/$1';
+$route['lihat_krs_all_semester/(:num)'] = 'admin/KrsController/KrsAllSemester/$1';
+$route['lihat_krs_semester'] = 'admin/KrsController/KrsSemester';
+
+//nilai Mahasiswa
+$route['admin_nilai_mahasiswa'] = 'admin/NilaiController';
+$route['input_nilai/(:num)'] = 'admin/NilaiController/pilihSemesterNilai/$1';
+$route['lihat_nilai_persemester'] = 'admin/NilaiController/lihatNilaiSemester/';
+$route['isi_nilai/(:num)'] = 'admin/NilaiController/isiNilai/$1';
+$route['proses_isi_nilai'] = 'admin/NilaiController/prosesIsiNilai';
+
+
+//KHS Mahasiswa
+$route['admin_khs_mahasiswa'] = 'admin/KhsController';
+$route['lihat_khs/(:num)'] = 'admin/KhsController/lihatKHS/$1';
+$route['lihat_khs_semester'] = 'admin/KhsController/KhsSemester';
+$route['lihat_khs_all_semester/(:num)'] = 'admin/KhsController/KhsAllSemester/$1';
+
+
+//Absensi Mahasiswa
+$route['admin_absensi_mahasiswa'] = 'admin/AbsensiMhsController';
+$route['lihat_jadwal_matkul'] = 'admin/AbsensiMhsController/lihatJadwalMatkul';
+$route['isi_mhs_byjadwal/(:num)'] = 'admin/AbsensiMhsController/lihatMhsByJadwal/$1';
+$route['simpan_absensi_mahasiswa'] = 'admin/AbsensiMhsController/simpanAbsensiMhs';
+$route['cek_absensi/(:num)'] = 'admin/AbsensiMhsController/cekAbsensiMhs/$1';
+$route['cek_kehadiran/(:num)/(:num)'] = 'admin/AbsensiMhsController/cekKehadiran/$1/$2';
+
+
+//Absensi Dosen
+$route['admin_absensi_dosen'] = 'admin/AbsensiDosenController';
+$route['simpan_absensi_dosen'] = 'admin/AbsensiDosenController/simpanAbsensiDosen';
+$route['cek_absensi_dosen'] = 'admin/AbsensiDosenController/cekAbsensiDosen';
+
+//Pengumuman
+$route['admin_pengumuman'] = 'admin/PengumumanController';
+$route['tambah_pengumuman'] = 'admin/PengumumanController/tambahPengumuman';
+$route['proses_tambah_pengumuman'] = 'admin/PengumumanController/prosesTambahPengumuman';
+$route['ubah_pengumuman/(:num)'] = 'admin/PengumumanController/ubahPengumuman/$1';
+$route['proses_ubah_pengumuman'] = 'admin/PengumumanController/prosesUbahPengumuman';
+$route['hapus_pengumuman/(:num)'] = 'admin/PengumumanController/hapusPengumuman/$1';
+
+/*level Admin*/
+//dashboard Mahasiswa
+$route['dashboard_mahasiswa'] = 'mahasiswa/MahasiswaController';
+$route['read_pengumuman/(:num)'] = 'mahasiswa/MahasiswaController/readPengumuman/$1';
+$route['data_profile_mahasiswa'] = 'mahasiswa/ProfileMhsController';
+$route['proses_ubah_profile_mahasiswa'] = 'mahasiswa/ProfileMhsController/ubahProfile';
+$route['ganti_foto_mahasiswa'] = 'mahasiswa/MahasiswaController/gantiFoto';
+$route['proses_ganti_foto'] = 'mahasiswa/MahasiswaController/prosesGantiFoto';
+
+//krs Mahasiswa
+$route['mahasiswa_krs'] = 'mahasiswa/KrsMahasiswaController';
+$route['mhs_lihat_krs_semester'] = 'mahasiswa/KrsMahasiswaController/KrsSemester';
+$route['mhs_lihat_krs_all_semester/(:num)'] = 'mahasiswa/KrsMahasiswaController/KrsAllSemester/$1';

@@ -12,6 +12,16 @@ class MahasiswaModels extends CI_Model
 		return $this->db->query("SELECT m.id, m.users_id, m.nim, m.nama, m.angkatan, p.nama_prodi FROM program_studi p, kurikulum k, mahasiswa m WHERE p.id = m.prodi_id AND k.id = m.kurikulum_id")->result();
 	}
 
+	public function getMhsByUserId($users_id)
+	{
+		return $this->db->query("SELECT * FROM `mahasiswa` WHERE users_id = '$users_id'")->result();
+	}
+
+	public function gantiFoto($foto, $id)
+	{
+		return $this->db->query("UPDATE `mahasiswa` SET `foto` = '$foto' WHERE `mahasiswa`.`id` = '$id'");
+	}
+
 	public function insert($table, $data)
 	{
 		$query = $this->db->insert($table, $data);

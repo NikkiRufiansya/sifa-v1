@@ -60,7 +60,7 @@
 										<td><?= $key->nama_kampus?></td>
 										<td><?= $key->ruangan?></td>
 										<td><?= $key->nama_prodi?></td>
-										<td><?= $key->dosen?></td>
+										<td><?= $key->nama?></td>
 										<td>
 											<a href="<?php echo base_url() ?>ubah_jadwal/<?= $key->id ?>"><i
 													class="glyphicon glyphicon-edit"></i></a>

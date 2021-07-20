@@ -9,7 +9,16 @@ class JadwalModels extends CI_Model
 
 	public function getJadwal()
 	{
-		$query = $this->db->query("SELECT  j.id ,j.nama_kelas, m.nama_matkul, m.semester, k.nama_kampus, j.ruangan ,p.nama_prodi , j.dosen FROM jadwal_kuliah j, matkul m, program_studi p, kampus k WHERE p.id = j.prodi_id AND m.id = j.matkul_id AND k.id = j.kampus_id");
+		$query = $this->db->query("SELECT j.id ,j.nama_kelas, m.nama_matkul, m.semester, k.nama_kampus, j.ruangan ,p.nama_prodi , d.nama FROM jadwal_kuliah j, matkul m, program_studi p, kampus k, dosen d WHERE p.id = j.prodi_id AND m.id = j.matkul_id AND k.id = j.kampus_id AND d.id = j.dosen	");
+		return $query->result();
+	}
+
+	public function getJadwalByKRS($prodi_id, $semester)
+	{
+		$query = $this->db->query("SELECT 
+									j.id, j.matkul_id, m.kode_matkul, m.semester, m.sks, m.nama_matkul, j.hari, j.jadwal_masuk, j.jadwal_selesai, d.nama 
+									FROM jadwal_kuliah j, matkul m, dosen d 
+									WHERE m.id = j.matkul_id AND d.id = j.dosen AND j.prodi_id = '$prodi_id' AND m.semester = '$semester'");
 		return $query->result();
 	}
 

@@ -1,6 +1,6 @@
 <?php
 
-class MahasiswaController extends CI_Controller
+class 	MahasiswaController extends CI_Controller
 {
 	public function __construct()
 	{
@@ -124,7 +124,7 @@ class MahasiswaController extends CI_Controller
 				'ka_prodi' => $this->input->post('ka_prodi'),
 				'foto' => 'default_profile.png'
 			);
-			$this->DosenModels->update_data('mahasiswa', $mahasiswa_id, $dataMhs);
+			$this->MahasiswaModels->update_data('mahasiswa', $mahasiswa_id, $dataMhs);
 			redirect('admin_mahasiswa');
 		} else {
 			$dataUsers = array(
@@ -135,7 +135,7 @@ class MahasiswaController extends CI_Controller
 				'telepone' => $this->input->post('telepone'),
 				'level' => 'mahasiswa'
 			);
-			$this->DosenModels->update_data('users', $users_id, $dataUsers);
+			$this->MahasiswaModels->update_data('users', $users_id, $dataUsers);
 			$dataMhs = array(
 				'users_id' => $this->input->post('users_id'),
 				'prodi_id' => $this->input->post('prodi_id'),
@@ -156,7 +156,7 @@ class MahasiswaController extends CI_Controller
 				'ka_prodi' => $this->input->post('ka_prodi'),
 				'foto' => 'default_profile.png'
 			);
-			$this->DosenModels->update_data('mahasiswa', $mahasiswa_id, $dataMhs);
+			$this->MahasiswaModels->update_data('mahasiswa', $mahasiswa_id, $dataMhs);
 			redirect('admin_mahasiswa');
 		}
 	}
@@ -165,8 +165,8 @@ class MahasiswaController extends CI_Controller
 	{
 		$mahasiswa_id = array('id' => $mahasiswa_id);
 		$users_id = array('id' => $users_id);
-		$this->DosenModels->delete('users' , $users_id);
-		$this->DosenModels->delete('mahasiswa' , $mahasiswa_id);
+		$this->MahasiswaModels->delete('users' , $users_id);
+		$this->MahasiswaModels->delete('mahasiswa' , $mahasiswa_id);
 		redirect('admin_mahasiswa');
 	}
 

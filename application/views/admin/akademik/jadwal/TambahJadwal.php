@@ -114,7 +114,7 @@
 									<select name="dosen" class="form-control" required>
 										<option value="">---Pilih Dosen---</option>
 										<?php foreach ($dosen as $key1): ?>
-											<option value="<?= $key1->nama ?>"><?= $key1->nama ?></option>
+											<option value="<?= $key1->id ?>"><?= $key1->nama ?></option>
 										<?php endforeach; ?>
 									</select>
 								</div>
