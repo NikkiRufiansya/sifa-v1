@@ -122,7 +122,7 @@ class 	MahasiswaController extends CI_Controller
 				'alamat' => $this->input->post('alamat'),
 				'status_awal' => $this->input->post('status_awal'),
 				'ka_prodi' => $this->input->post('ka_prodi'),
-				'foto' => 'default_profile.png'
+				'foto' => $this->input->post('foto')
 			);
 			$this->MahasiswaModels->update_data('mahasiswa', $mahasiswa_id, $dataMhs);
 			redirect('admin_mahasiswa');
@@ -154,7 +154,7 @@ class 	MahasiswaController extends CI_Controller
 				'alamat' => $this->input->post('alamat'),
 				'status_awal' => $this->input->post('status_awal'),
 				'ka_prodi' => $this->input->post('ka_prodi'),
-				'foto' => 'default_profile.png'
+				'foto' => $this->input->post('foto')
 			);
 			$this->MahasiswaModels->update_data('mahasiswa', $mahasiswa_id, $dataMhs);
 			redirect('admin_mahasiswa');

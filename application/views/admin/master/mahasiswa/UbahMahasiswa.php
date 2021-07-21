@@ -174,6 +174,7 @@
 											<label for="">Ka Prodi</label>
 											<input type="text" value="<?= $mhs['ka_prodi']?>" name="ka_prodi" class="form-control" placeholder="Ka Prodi">
 										</div>
+										<input type="hidden" name="foto" value="<?= $mhs['foto']?>">
 										<div class="form-group">
 											<input type="submit" value="Simpan" class="btn btn-success">
 										</div>

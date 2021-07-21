@@ -34,10 +34,13 @@
 					<div class="col-sm-12">
 						<h4 class="m-t-0 header-title"><b>Pilih Matkul</b></h4>
 						<div class="card-box table-responsive">
-							<form action="<?php echo base_url('cetak_krs') ?>" method="post">
+							<form action="<?php echo base_url('admin_cetak_all_krs') ?>" method="post" target="_blank">
 								<?php foreach ($mahasiswa as $mhs): ?>
 								Nim : <span><?= $mhs['nim'] ?></span><br>
 								Nama : <span><?= $mhs['nama'] ?></span>
+								<input type="hidden" name="nim" value="<?= $mhs['nim']?>">
+								<input type="hidden" name="nama" value="<?= $mhs['nama']?>">
+								<input type="hidden" name="id" value="<?= $mhs['id']?>">
 								<table id="datatable" class="table table-striped table-bordered">
 									<thead>
 									<tr>

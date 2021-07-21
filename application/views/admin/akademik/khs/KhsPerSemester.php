@@ -32,12 +32,20 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<h4 class="m-t-0 header-title"><b>Pilih Matkul</b></h4>
 						<div class="card-box table-responsive">
-							<form action="<?php echo base_url('cetak_khs') ?>" method="post">
+							<form action="<?php echo base_url('admin_cetak_semester_khs') ?>" method="post" target="_blank">
 								<?php foreach ($mahasiswa as $mhs): ?>
 								Nim : <span><?= $mhs['nim'] ?></span><br>
 								Nama : <span><?= $mhs['nama'] ?></span><br>
+								<input type="hidden" name="nim" value="<?= $mhs['nim']?>">
+								<input type="hidden" name="nama" value="<?= $mhs['nama']?>">
+								<input type="hidden" name="id" value="<?= $mhs['id']?>">
+								<?php foreach ($semester as $sm):?>
+								<input type="hidden" name="semester" value="<?= $sm?>">
+								<?php endforeach;?>
+								<?php foreach ($prodi_id as $pd):?>
+									<input type="hidden" name="prodi_id" value="<?= $pd?>">
+								<?php endforeach;?>
 								<?php
 								$ip = array();
 								$pi = array();
@@ -62,7 +70,7 @@
 									$sks1[] = $sks[$key];
 								}
 								$ipk = array_sum($ip) / array_sum($sks); //sum(sks * nilai) / SKS
-								echo "IPK : "  .$ipk;
+								echo "IPK : "  . Round($ipk,2);
 								?>
 								<table id="datatable" class="table table-striped table-bordered">
 									<thead>

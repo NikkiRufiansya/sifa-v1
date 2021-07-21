@@ -66,7 +66,7 @@
 									<input type="submit" value="Lanjut" class="btn btn-success">
 								</div>
 							</form>
-							<a href="<?php echo base_url()?>mhs_lihat_krs_all_semester/<?= $mhs->id?>" class="btn btn-danger">Lihat Semua Semester</a>
+
 
 							<?php endforeach; ?>
 						</div>

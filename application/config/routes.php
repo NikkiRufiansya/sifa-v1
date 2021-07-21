@@ -172,6 +172,9 @@ $route['simpan_krs'] = 'admin/KrsController/simpanKrs';
 $route['lihat_krs/(:num)'] = 'admin/KrsController/lihatKrs/$1';
 $route['lihat_krs_all_semester/(:num)'] = 'admin/KrsController/KrsAllSemester/$1';
 $route['lihat_krs_semester'] = 'admin/KrsController/KrsSemester';
+$route['admin_cetak_all_krs'] = 'admin/KrsController/cetakAllKRS';
+$route['admin_cetak_krs_semester'] = 'admin/KrsController/cetakSemesterKRS';
+
 
 //nilai Mahasiswa
 $route['admin_nilai_mahasiswa'] = 'admin/NilaiController';
@@ -186,7 +189,8 @@ $route['admin_khs_mahasiswa'] = 'admin/KhsController';
 $route['lihat_khs/(:num)'] = 'admin/KhsController/lihatKHS/$1';
 $route['lihat_khs_semester'] = 'admin/KhsController/KhsSemester';
 $route['lihat_khs_all_semester/(:num)'] = 'admin/KhsController/KhsAllSemester/$1';
-
+$route['admin_cetak_all_khs'] = 'admin/KhsController/cetakAllKHS';
+$route['admin_cetak_semester_khs'] = 'admin/KhsController/cetakSemesterKHS';
 
 //Absensi Mahasiswa
 $route['admin_absensi_mahasiswa'] = 'admin/AbsensiMhsController';
@@ -223,3 +227,13 @@ $route['proses_ganti_foto'] = 'mahasiswa/MahasiswaController/prosesGantiFoto';
 $route['mahasiswa_krs'] = 'mahasiswa/KrsMahasiswaController';
 $route['mhs_lihat_krs_semester'] = 'mahasiswa/KrsMahasiswaController/KrsSemester';
 $route['mhs_lihat_krs_all_semester/(:num)'] = 'mahasiswa/KrsMahasiswaController/KrsAllSemester/$1';
+
+//khs Mahasiswa
+$route['mahasiswa_khs'] = 'mahasiswa/KhsMahasiswaController';
+$route['mhs_lihat_khs_semester'] = 'mahasiswa/KhsMahasiswaController/KhsSemester';
+$route['mhs_lihat_khs_all_semester/(:num)'] = 'mahasiswa/KhsMahasiswaController/KhsAllSemester/$1';
+
+//Transkrip nilai Mahasiswa
+$route['mhs_transkrip_nilai'] = 'mahasiswa/TranskripNilaiController';
+$route['cetak_transkrip'] = 'mahasiswa/TranskripNilaiController/cetakTranskrip';
+

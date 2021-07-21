@@ -79,7 +79,7 @@
 									<hr/>
 									<?php foreach ($pengumuman as $pg):?>
 									<ul>
-										<li><a href="<?php echo base_url()?>read_pengumuman/<?= $pg->id?>"><?= $pg->judul?></a> <?= $pg->tanggal?></li>
+										<li><a href="<?php echo base_url()?>read_pengumuman/<?= $pg->id?>"><?= $pg->judul?></a> <span class="text-orange"><?= $pg->tanggal?></span></li>
 									</ul>
 
 									<?php endforeach;?>

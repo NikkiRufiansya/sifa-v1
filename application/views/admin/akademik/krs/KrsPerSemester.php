@@ -34,10 +34,20 @@
 					<div class="col-sm-12">
 						<h4 class="m-t-0 header-title"><b>Pilih Matkul</b></h4>
 						<div class="card-box table-responsive">
-							<form action="<?php echo base_url('cetak_krs') ?>" method="post">
+							<form action="<?php echo base_url('admin_cetak_krs_semester') ?>" method="post" target="_blank">
 								<?php foreach ($mahasiswa as $mhs): ?>
 								Nim : <span><?= $mhs['nim'] ?></span><br>
 								Nama : <span><?= $mhs['nama'] ?></span>
+
+								<input type="hidden" name="nim" value="<?= $mhs['nim']?>">
+								<input type="hidden" name="nama" value="<?= $mhs['nama']?>">
+								<input type="hidden" name="id" value="<?= $mhs['id']?>">
+								<?php foreach ($semester as $sm):?>
+									<input type="hidden" name="semester" value="<?= $sm?>">
+								<?php endforeach;?>
+								<?php foreach ($prodi_id as $pd):?>
+									<input type="hidden" name="prodi_id" value="<?= $pd?>">
+								<?php endforeach;?>
 								<table id="datatable" class="table table-striped table-bordered">
 									<thead>
 									<tr>
@@ -47,7 +57,6 @@
 										<th>SKS</th>
 										<th>Jam Kuliah</th>
 										<th>Dosen</th>
-
 									</tr>
 									</thead>
 									<tbody>
@@ -65,6 +74,16 @@
 									<?php endforeach; ?>
 									</tbody>
 								</table>
+								<?php
+								$sks =  array();
+								foreach ($krs as $sks1 => $value){
+									$sks[$sks1] = $value->sks;
+								}
+								$sksTotal = array_sum($sks);
+								echo '<b>Jumlah Pengambilan SKS : ' .$sksTotal .'</b>';
+								echo '<br><br>'
+								?>
+
 								<div class="form-group">
 									<input type="submit" value="Cetak" class="btn btn-success">
 								</div>

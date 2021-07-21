@@ -29,6 +29,8 @@ class KrsMahasiswaController extends CI_Controller
 	{
 		$idMahasiswa = array('id' => $this->input->post('mahasiswa_id'));
 		$data['mahasiswa'] = $this->MahasiswaModels->getDataById('mahasiswa', $idMahasiswa);
+		$data['semester'] = array('semester' => $this->input->post('semester'));
+		$data['prodi_id'] = array('prodi_id' => $this->input->post('prodi_id'));
 		$data['krs'] = $this->KrsModels->getKRSPerSemester(
 			$this->input->post('mahasiswa_id'),
 			$this->input->post('semester'),

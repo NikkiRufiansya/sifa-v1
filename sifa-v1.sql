@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 20, 2021 at 09:26 AM
+-- Generation Time: Jul 21, 2021 at 10:59 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.5
 
@@ -214,12 +214,16 @@ INSERT INTO `jadwal_matkul_mahasiswa` (`id`, `mahasiswa_id`, `jadwal_id`, `grade
 (50, 4, 4, 'A'),
 (51, 4, 7, 'A'),
 (52, 1, 5, 'A'),
-(53, 1, 6, 'A'),
+(53, 1, 6, 'B'),
 (54, 1, 4, 'A'),
 (55, 1, 7, 'A'),
 (56, 4, 8, 'A'),
 (57, 1, 8, 'C'),
-(58, 5, 9, NULL);
+(58, 5, 9, NULL),
+(59, 6, 5, NULL),
+(60, 6, 6, NULL),
+(61, 6, 4, NULL),
+(62, 6, 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -339,9 +343,10 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id`, `users_id`, `prodi_id`, `kurikulum_id`, `program`, `nama`, `nim`, `angkatan`, `email`, `telepone`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `status_sipil`, `alamat`, `status_awal`, `ka_prodi`, `foto`, `nama_ayah`, `nik_ayah`, `nama_ibu`, `nik_ibu`, `no_tlpn_ortu`, `alamat_ortu`, `nama_sekolah`, `alamat_sekolah`, `kota_sekolah`, `tlpn_sekolah`, `email_sekolah`) VALUES
-(1, 25, 3, 2, 'REGULER', 'Nikky Rufiansya', '151111035', '1', '151111035@mhs.stiki.ac.id', '08123456789', 'Banjarmasin', '1997-02-13', 'pria', 'islam', 'belum_menikah', 'Banjarmasin', 'baru', 'Maulidi S.Kom,. M.Kom', 'profile.jpg', 'SUKARNO', '64050201017110013', 'NATANIA', '640502008790002', '081250415637', 'JL TEUKU UMAR RT.13 NUNUKAN', 'Madrasah Aliyah Al Iklhas', 'Kecamatan Nunukan Tengah', 'Nunukan', '-', 'alikhlasnnk@gmail.com'),
+(1, 25, 3, 2, 'REGULER', 'Nikky Rufiansya', '151111035', '1', '151111035@mhs.stiki.ac.id', '081234567892', 'Banjarmasin', '1997-02-13', 'pria', 'islam', 'belum_menikah', 'Banjarmasin', 'baru', 'Maulidi S.Kom,. M.Kom', 'profile.jpg', 'SUKARNO', '64050201017110013', 'NATANIA', '640502008790002', '081250415637', 'JL TEUKU UMAR RT.13 NUNUKAN', 'Madrasah Aliyah Al Iklhas', 'Kecamatan Nunukan Tengah', 'Nunukan', '-', 'alikhlasnnk@gmail.com'),
 (4, 36, 3, 2, 'REGULER', 'Yanti Yulianti', '151111000', '1', 'aa@aa', '-', '-', '0000-00-00', 'wanita', 'islam', 'belum_menikah', '-', 'baru', 'Maulidi S.Kom,. M.Kom', 'default_profile.png', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', ''),
-(5, 37, 2, 4, 'REGULER', 'Siska', '151000111', '1', 'siska@sifa.ac.id', '-', '-', '0000-00-00', 'wanita', 'islam', 'belum_menikah', '-', 'baru', '-', 'default_profile.png', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '');
+(5, 37, 2, 4, 'REGULER', 'Siska', '151000111', '1', 'siska@sifa.ac.id', '-', '-', '0000-00-00', 'wanita', 'islam', 'belum_menikah', '-', 'baru', '-', 'default_profile.png', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', ''),
+(6, 38, 3, 2, 'REGULER', 'Ashlih QA', '151111097', '1', '151111097@mhs.sifa.ac.id', '-', 'Banyuwangi', '2021-07-13', 'wanita', 'islam', 'belum_menikah', '-', 'baru', 'Maulidi S.Kom, M.Kom', 'default_profile.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -486,7 +491,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `nama`, `email`, `telepone`, 
 (16, 'marketing', '0192023a7bbd73250516f069df18b500', 'marketing', 'marketing@mail.com', '08123456789', 'marketing'),
 (17, 'keuangan', '0192023a7bbd73250516f069df18b500', 'keuangan', 'keuangan@mail.com', '0812345677', 'keuangan'),
 (24, 'dosen2', '0192023a7bbd73250516f069df18b500', 'Dosen Kecantikan', 'dosen2@gmail.com', '08123332434234', 'dosen'),
-(25, '151111035', '0192023a7bbd73250516f069df18b500', 'Nikky Rufiansya', '151111035@mhs.stiki.ac.id', '08123456789', 'mahasiswa'),
+(25, '151111035', '0192023a7bbd73250516f069df18b500', 'Nikky Rufiansya', '151111035@mhs.stiki.ac.id', '081234567892', 'mahasiswa'),
 (27, 'admin2', '0192023a7bbd73250516f069df18b500', 'Nikky', 'admin2@mail.com', '0812312321', 'admin'),
 (29, '58001', '0192023a7bbd73250516f069df18b500', 'MOH IMRON DIMYATHI', 'imron@sifa.ac.id', '08000000', 'dosen'),
 (30, '58002', '0192023a7bbd73250516f069df18b500', 'IMRON HAMZAH, S.Kom', 'hamzah@sifa.ac.id', '080000', 'dosen'),
@@ -496,7 +501,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `nama`, `email`, `telepone`, 
 (34, '58006', 'c8c18105dbd99fb9280f33d3f6c68c3e', 'M LUQMAN HADI, S.Kom', 'lukman@sifa.ac.id', '-', 'dosen'),
 (35, '58007', 'b19eed7dd2015d5bb3c2f5b82a4f431c', 'Siti Khomsatin, S.Pt, M.Si', 'siti@sifa.ac.id', '-', 'dosen'),
 (36, 'yanti', '0192023a7bbd73250516f069df18b500', 'Yanti Yulianti', 'aa@aa', '-', 'mahasiswa'),
-(37, 'siska', '0192023a7bbd73250516f069df18b500', 'Siska', 'siska@sifa.ac.id', '-', 'mahasiswa');
+(37, 'siska', '0192023a7bbd73250516f069df18b500', 'Siska', 'siska@sifa.ac.id', '-', 'mahasiswa'),
+(38, '151111097', '0192023a7bbd73250516f069df18b500', 'Ashlih QA', '151111097@mhs.sifa.ac.id', '-', 'mahasiswa');
 
 --
 -- Indexes for dumped tables
@@ -636,7 +642,7 @@ ALTER TABLE `jadwal_kuliah`
 -- AUTO_INCREMENT for table `jadwal_matkul_mahasiswa`
 --
 ALTER TABLE `jadwal_matkul_mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `kalender_akademik`
@@ -660,7 +666,7 @@ ALTER TABLE `kurikulum`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `matkul`
@@ -696,7 +702,7 @@ ALTER TABLE `ruangan`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

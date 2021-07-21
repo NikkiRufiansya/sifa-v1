@@ -15,9 +15,8 @@
 					<ul class="list-unstyled">
 						<li><a href="<?php echo base_url('data_profile_mahasiswa')?>">Data Profil</a></li>
 						<li><a href="<?php echo base_url('mahasiswa_krs')?>">KRS</a></li>
-						<li><a href="<?php echo base_url('')?>">KHS</a></li>
-						<li><a href="<?php echo base_url('')?>">Transkrip Nilai</a></li>
-						<li><a href="<?php echo base_url('')?>">Jadwal</a></li>
+						<li><a href="<?php echo base_url('mahasiswa_khs')?>">KHS</a></li>
+						<li><a href="<?php echo base_url('mhs_transkrip_nilai')?>">Transkrip Nilai</a></li>
 					</ul>
 				</li>
 
