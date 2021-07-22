@@ -32,6 +32,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
+
 						<div class="card-box table-responsive">
 							<?php foreach ($nilai as $key):?>
 							<form action="<?php echo base_url('proses_isi_nilai') ?>" method="post">
@@ -46,6 +47,8 @@
 									<input type="submit" value="Simpan" class="btn btn-success">
 								</div>
 							</form>
+
+
 							<?php endforeach;?>
 						</div>
 					</div>
