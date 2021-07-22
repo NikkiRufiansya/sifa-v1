@@ -26,6 +26,11 @@ class AbsensiDosenModels extends CI_Model
 		return $query;
 	}
 
+	public function getDataByDosenId($id)
+	{
+		return $this->db->query("SELECT * FROM `absensi_dosen` WHERE dosen_id = '$id' ORDER BY `absensi_dosen`.`tanggal` DESC")->result();
+	}
+
 	public function getDataByDate($date)
 	{
 		$query = $this->db->query("SELECT d.nama, a.status, a.tanggal FROM absensi_dosen a, dosen d WHERE d.id = a.dosen_id AND tanggal = '$date'");

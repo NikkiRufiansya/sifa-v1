@@ -7,16 +7,15 @@
 				<li class="menu-title">Navigation All</li>
 
 				<li class="has_sub">
-					<a href="<?php echo base_url('dashboard_mahasiswa')?>" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span> Dashboard </span> </a>
+					<a href="<?php echo base_url('dashboard_dosen')?>" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span> Dashboard </span> </a>
 				</li>
 
 				<li class="has_sub">
 					<a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-book"></i> <span> Akademik </span> <span class="menu-arrow"></span></a>
 					<ul class="list-unstyled">
-						<li><a href="<?php echo base_url('data_profile_mahasiswa')?>">Data Profil</a></li>
-						<li><a href="<?php echo base_url('mahasiswa_krs')?>">KRS</a></li>
-						<li><a href="<?php echo base_url('mahasiswa_khs')?>">KHS</a></li>
-						<li><a href="<?php echo base_url('mhs_transkrip_nilai')?>">Transkrip Nilai</a></li>
+						<li><a href="<?php echo base_url('data_profile_dosen')?>">Data Profil</a></li>
+						<li><a href="<?php echo base_url('jadwal_mengajar')?>">Jadwal Mengajar</a></li>
+						<li><a href="<?php echo base_url('absensi_dosen')?>">Absensi</a></li>
 					</ul>
 				</li>
 

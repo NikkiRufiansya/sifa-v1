@@ -237,3 +237,13 @@ $route['mhs_lihat_khs_all_semester/(:num)'] = 'mahasiswa/KhsMahasiswaController/
 $route['mhs_transkrip_nilai'] = 'mahasiswa/TranskripNilaiController';
 $route['cetak_transkrip'] = 'mahasiswa/TranskripNilaiController/cetakTranskrip';
 
+
+/* level dosen */
+$route['dashboard_dosen'] = 'dosen/DosenController';
+$route['data_profile_dosen'] = 'dosen/DosenController/profileDosen';
+$route['proses_ubah_profile_dosen'] = 'dosen/DosenController/prosesUbahDosen';
+$route['ganti_foto_dosen'] = 'dosen/DosenController/gantiFotoDosen';
+$route['proses_ganti_foto_dosen'] = 'dosen/DosenController/prosesGantiFoto';
+$route['jadwal_mengajar'] = 'dosen/DosenController/JadwalMengajar';
+$route['absensi_dosen'] = 'dosen/DosenController/AbsensiDosen';
+$route['read_pengumuman_dosen/(:num)'] = 'dosen/DosenController/readPengumuman/$1';

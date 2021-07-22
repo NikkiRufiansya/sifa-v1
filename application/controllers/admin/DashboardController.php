@@ -9,15 +9,24 @@ class DashboardController extends CI_Controller
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('AdminModels');
+		$this->load->model("MahasiswaModels");
+		$this->load->model("DosenModels");
+		$this->load->model("ProgramStudiModels");
+		$this->load->model("InstitusiModels");
 		$this->cek_login();
 	}
 
 	public function index()
 	{
+		$data['totalMhs'] = $this->MahasiswaModels->getTotalMahasiswa();
+		$data['totalDosen'] = $this->DosenModels->getTotalDosen();
+		$data['totalProdi'] = $this->ProgramStudiModels->getTotalProdi();
+		$idInstitusi = array('id' => 2);
+		$data['institusi'] = $this->InstitusiModels->getDataById($idInstitusi);
 		$this->load->view('partials/head');
 		$this->load->view('partials/topbar');
 		$this->load->view('admin/Sidebar');
-		$this->load->view('admin/Dashboard');
+		$this->load->view('admin/Dashboard',$data);
 		$this->load->view('partials/footer');
 	}
 
@@ -98,7 +107,6 @@ class DashboardController extends CI_Controller
 		$idUsers = array('id' => $id);
 		$this->AdminModels->delete($idUsers);
 		redirect(base_url('staff_admin'));
-
 		$this->load->view('Dashboard');
 	}
 }

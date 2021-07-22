@@ -1,10 +1,16 @@
 <?php
 
-class ProgramStudiModels extends CI_Model{
+class ProgramStudiModels extends CI_Model
+{
 
 	public function getAllData()
 	{
 		return $this->db->get('program_studi')->result();
+	}
+
+	public function getTotalProdi()
+	{
+		return $this->db->query("SELECT COUNT(id) as program_studi FROM program_studi")->result();
 	}
 
 	public function insert($data)
@@ -19,7 +25,6 @@ class ProgramStudiModels extends CI_Model{
 		$query = $query->result_array();
 		return $query;
 	}
-
 
 
 	function update_data($where, $data)

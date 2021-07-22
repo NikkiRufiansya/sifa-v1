@@ -51,7 +51,7 @@ class AuthController extends CI_Controller
 					if ($cek_login->level == 'admin') {
 						redirect('/dashboard');
 					} else if ($cek_login->level == 'dosen') {
-						echo "Halaman Dosen";
+						redirect('/dashboard_dosen');
 					} else if ($cek_login->level == 'akademik') {
 						echo "Halaman Akademik";
 					} else if ($cek_login->level == 'marketing') {

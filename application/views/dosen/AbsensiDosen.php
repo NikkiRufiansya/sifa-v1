@@ -3,6 +3,7 @@
 <!-- Begin page -->
 <div id="wrapper">
 
+
 	<!-- ============================================================== -->
 	<!-- Start right Content here -->
 	<!-- ============================================================== -->
@@ -13,7 +14,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="page-title-box">
-							<h4 class="page-title">Dashboard Identitas Institusi</h4>
+							<h4 class="page-title">Absensi Dosen</h4>
 							<ol class="breadcrumb p-0 m-0">
 								<li>
 									<a href="#">Zircos</a>
@@ -22,7 +23,7 @@
 									<a href="#">Master</a>
 								</li>
 								<li class="active">
-									Identitas Insitusi
+									Absensi Dosen
 								</li>
 							</ol>
 							<div class="clearfix"></div>
@@ -31,35 +32,28 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-
-						<h4 class="m-t-0 header-title"><b>Data Indentitas Institusi</b></h4>
-
+						<?php foreach ($dosen as $key):?>
+							<h5>NIK : <?= $key->nik?></h5>
+							<h5>Nama : <?= $key->nama?></h5>
+							<h5>Email : <?= $key->email?></h5>
+							<h5>Telepone : <?= $key->telepone?></h5>
+						<?php endforeach;?>
 						<div class="card-box table-responsive">
-<!--							<a href="--><?php //echo base_url('tambah_instusi')?><!--" class="btn btn-primary" style="margin-bottom: 20px;">Tambah Institusi</a>-->
 							<table id="datatable" class="table table-striped table-bordered">
 								<thead>
 								<tr>
-									<th>Nama Identitas</th>
-									<th>Kode Hukum</th>
-									<th>Email</th>
-									<th>Telepone</th>
-									<th>Action</th>
+									<th>Tanggal</th>
+									<th>Status Kehadiran</th>
 								</tr>
 								</thead>
 								<tbody>
-								<?php foreach ($institusi as $key):?>
+								<?php foreach ($absensi as $key): ?>
 									<tr>
-										<td><?= $key->nama_identitas?></td>
-										<td><?= $key->kode_hukum?></td>
-										<td><?= $key->email?></td>
-										<td><?= $key->telepone?></td>
-										<td>
-											<a href="<?php echo base_url()?>ubah_institusi/<?= $key->id?>"><i class="glyphicon glyphicon-edit"></i></a>
-											||
-											<a href="<?php echo base_url()?>hapus_institusi/<?= $key->id?>"><i class="glyphicon glyphicon-trash"></i></a>
-										</td>
+										<td><?= $key->tanggal ?></td>
+										<td><?= $key->status ?></td>
+
 									</tr>
-								<?php endforeach;?>
+								<?php endforeach; ?>
 								</tbody>
 							</table>
 						</div>

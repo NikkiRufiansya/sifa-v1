@@ -7,6 +7,11 @@ class MahasiswaModels extends CI_Model
 		return $this->db->get('mahasiswa')->result();
 	}
 
+	public function getTotalMahasiswa()
+	{
+		return $this->db->query("SELECT COUNT(id) as mahasiswa FROM mahasiswa")->result();
+	}
+
 	public function getMahasiswa()
 	{
 		return $this->db->query("SELECT m.id, m.users_id, m.nim, m.nama, m.angkatan, p.nama_prodi FROM program_studi p, kurikulum k, mahasiswa m WHERE p.id = m.prodi_id AND k.id = m.kurikulum_id")->result();
@@ -21,6 +26,7 @@ class MahasiswaModels extends CI_Model
 	{
 		return $this->db->query("UPDATE `mahasiswa` SET `foto` = '$foto' WHERE `mahasiswa`.`id` = '$id'");
 	}
+
 
 	public function insert($table, $data)
 	{

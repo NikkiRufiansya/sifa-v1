@@ -13,6 +13,13 @@ class JadwalModels extends CI_Model
 		return $query->result();
 	}
 
+	public function jadwalNgajar($dosen_id, $tahun)
+	{
+		return $this->db->query("SELECT m.kode_matkul, m.nama_matkul, j.hari, j.jadwal_masuk, jadwal_selesai, k.nama_kampus, j.ruangan  
+FROM jadwal_kuliah j, matkul m, kampus k 
+WHERE m.id = j.matkul_id AND k.id = j.kampus_id AND dosen = '$dosen_id' AND tahun = '$tahun'")->result();
+	}
+
 	public function getJadwalByKRS($prodi_id, $semester)
 	{
 		$query = $this->db->query("SELECT 

@@ -3,6 +3,12 @@
 <!-- Begin page -->
 <div id="wrapper">
 
+
+	<!-- ========== Left Sidebar Start ========== -->
+
+	<!-- Left Sidebar End -->
+
+
 	<!-- ============================================================== -->
 	<!-- Start right Content here -->
 	<!-- ============================================================== -->
@@ -13,61 +19,33 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="page-title-box">
-							<h4 class="page-title">Dashboard Identitas Institusi</h4>
+							<h4 class="page-title">Dashboard Dosen</h4>
 							<ol class="breadcrumb p-0 m-0">
 								<li>
 									<a href="#">Zircos</a>
 								</li>
 								<li>
-									<a href="#">Master</a>
+									<a href="#">Dashboard</a>
 								</li>
 								<li class="active">
-									Identitas Insitusi
+									Dashboard
 								</li>
 							</ol>
 							<div class="clearfix"></div>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-sm-12">
+				<!-- end row -->
 
-						<h4 class="m-t-0 header-title"><b>Data Indentitas Institusi</b></h4>
-
-						<div class="card-box table-responsive">
-<!--							<a href="--><?php //echo base_url('tambah_instusi')?><!--" class="btn btn-primary" style="margin-bottom: 20px;">Tambah Institusi</a>-->
-							<table id="datatable" class="table table-striped table-bordered">
-								<thead>
-								<tr>
-									<th>Nama Identitas</th>
-									<th>Kode Hukum</th>
-									<th>Email</th>
-									<th>Telepone</th>
-									<th>Action</th>
-								</tr>
-								</thead>
-								<tbody>
-								<?php foreach ($institusi as $key):?>
-									<tr>
-										<td><?= $key->nama_identitas?></td>
-										<td><?= $key->kode_hukum?></td>
-										<td><?= $key->email?></td>
-										<td><?= $key->telepone?></td>
-										<td>
-											<a href="<?php echo base_url()?>ubah_institusi/<?= $key->id?>"><i class="glyphicon glyphicon-edit"></i></a>
-											||
-											<a href="<?php echo base_url()?>hapus_institusi/<?= $key->id?>"><i class="glyphicon glyphicon-trash"></i></a>
-										</td>
-									</tr>
-								<?php endforeach;?>
-								</tbody>
-							</table>
-						</div>
-					</div>
+				<div class="col-md-8 col-lg-9">
+					<h4>Pengumuman</h4>
+					<hr/>
+					<?php foreach ($pengumuman as $pg): ?>
+						<h4><?= $pg['judul']?></h4>
+						<p><?= $pg['isi']?></p>
+					<?php endforeach; ?>
 				</div>
-
-
-			</div>
+			</div> <!-- container -->
 
 		</div> <!-- content -->
 

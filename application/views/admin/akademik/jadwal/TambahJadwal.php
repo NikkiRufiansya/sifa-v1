@@ -54,7 +54,7 @@
 									</select>
 								</div>
 								<div class="form-group">
-									<label for="">Pilih Kurikulum</label>
+									<label for="">Pilih Matkul</label>
 									<select name="matkul_id" id="matkul" class="form-control" required>
 										<option>No Selected</option>
 									</select>
