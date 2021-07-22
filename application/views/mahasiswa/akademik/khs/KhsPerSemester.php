@@ -54,15 +54,19 @@
 								$sks1 = array();
 								$bobot = array();
 								foreach ($khs as $key => $value) {
-									if ($value->grade == "A") {
+									if ($value->grade == "A"){
 										$bobot[] = 4;
-									} else if ($value->grade == "B") {
+									}else if ($value->grade == "B+"){
+										$bobot[] = 3.5;
+									}else if ($value->grade == "B"){
 										$bobot[] = 3;
-									} else if ($value->grade == "C") {
+									}else if ($value->grade == "C+"){
+										$bobot[] = 2.5;
+									}else if ($value->grade == "C"){
 										$bobot[] = 2;
-									} else if ($value->grade == "D") {
+									}else if ($value->grade == "D"){
 										$bobot[] = 1;
-									} else {
+									}else{
 										$bobot[] = 0;
 									}
 									$ip[$key] = $value->sks * $bobot[$key]; //SKS * Nilai
