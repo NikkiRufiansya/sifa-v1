@@ -55,8 +55,8 @@
 										<td><?= $key->telepone?></td>
 										<td>
 											<a href="<?php echo base_url()?>ubah_institusi/<?= $key->id?>"><i class="glyphicon glyphicon-edit"></i></a>
-											||
-											<a href="<?php echo base_url()?>hapus_institusi/<?= $key->id?>"><i class="glyphicon glyphicon-trash"></i></a>
+
+<!--											<a href="--><?php //echo base_url()?><!--hapus_institusi/"><i class="glyphicon glyphicon-trash"></i></a>-->
 										</td>
 									</tr>
 								<?php endforeach;?>
