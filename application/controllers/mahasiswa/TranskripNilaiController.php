@@ -37,15 +37,19 @@ class TranskripNilaiController extends CI_Controller
 		$sks1 = array();
 		$bobot = array();
 		foreach ($data as $key => $value) {
-			if ($value->grade == "A") {
+			if ($value->grade == "A"){
 				$bobot[] = 4;
-			} else if ($value->grade == "B") {
+			}else if ($value->grade == "B+"){
+				$bobot[] = 3.5;
+			}else if ($value->grade == "B"){
 				$bobot[] = 3;
-			} else if ($value->grade == "C") {
+			}else if ($value->grade == "C+"){
+				$bobot[] = 2.5;
+			}else if ($value->grade == "C"){
 				$bobot[] = 2;
-			} else if ($value->grade == "D") {
+			}else if ($value->grade == "D"){
 				$bobot[] = 1;
-			} else {
+			}else{
 				$bobot[] = 0;
 			}
 			$ip[$key] = $value->sks * $bobot[$key]; //SKS * Nilai
@@ -75,7 +79,7 @@ class TranskripNilaiController extends CI_Controller
 		$pdf->Cell(0, 0, "NIM : " . $this->input->post('nim'));
 		$pdf->Ln(5);
 		$pdf->Cell(0, 0, "Nama : " . $this->input->post('nama'));
-		$pdf->Cell(-12, 0, "IPK : " . Round($ipk, 2), '', '', 'R');
+		$pdf->Cell(-12, 0, "IPK : " . number_format($ipk, 2), '', '', 'R');
 		$pdf->LN(5);
 		// Memberikan space kebawah agar tidak terlalu rapat
 		$pdf->SetFont('Arial', 'B', 10);

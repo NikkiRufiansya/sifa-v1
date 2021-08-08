@@ -69,7 +69,7 @@
 									$sks1[] = $sks[$key];
 								}
 								$ipk = array_sum($ip) / array_sum($sks); //sum(sks * nilai) / SKS
-								echo "IPK : "  . Round($ipk,2);
+								echo "IPK : "  . number_format($ipk,2);
 								?>
 								<table id="datatable" class="table table-striped table-bordered">
 									<thead>

@@ -247,3 +247,13 @@ $route['proses_ganti_foto_dosen'] = 'dosen/DosenController/prosesGantiFoto';
 $route['jadwal_mengajar'] = 'dosen/DosenController/JadwalMengajar';
 $route['absensi_dosen'] = 'dosen/DosenController/AbsensiDosen';
 $route['read_pengumuman_dosen/(:num)'] = 'dosen/DosenController/readPengumuman/$1';
+
+
+/* API MHS Mobile*/
+$route['api/v1/login'] = 'api/ApiLogin/login';
+$route['api/v1/profile_mhs/(:num)'] = 'api/ApiDashboardMhs/profile/$1';
+$route['api/v1/pengumuman_mhs'] = 'api/ApiDashboardMhs/pengumuman';
+$route['api/v1/detail_pengumuman_mhs/(:num)'] = 'api/ApiDashboardMhs/detailPengumuman/$1';
+$route['api/v1/transkrip_mhs/(:num)'] = 'api/ApiDashboardMhs/transkripMhs/$1';
+$route['api/v1/krs_mhs'] = 'api/ApiDashboardMhs/krsMhs';
+$route['api/v1/khs_mhs'] = 'api/ApiDashboardMhs/khsMhs';

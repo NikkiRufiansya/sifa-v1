@@ -3,9 +3,13 @@
 class PengumumanModels extends CI_Model
 {
 	public function getAllData(){
-		return $this->db->get('pengumuman')->result();
+		return $this->db->query("SELECT * FROM `pengumuman` ORDER BY tanggal DESC")->result();
 	}
 
+	public function detail($id)
+	{
+		return $this->db->query("SELECT * FROM `pengumuman` WHERE id = '$id'")->result();
+	}
 	public function insert($data)
 	{
 		$query = $this->db->insert('pengumuman', $data);
