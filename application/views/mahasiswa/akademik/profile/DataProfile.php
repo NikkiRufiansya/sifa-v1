@@ -57,12 +57,12 @@
 										<div class="form-group">
 											<label for="">Nomor Induk Mahasiswa</label>
 											<input type="text" value="<?= $mhs->nim ?>" name="nim"
-												   class="form-control" id="nim" placeholder="Nomor Induk Mahasiswa">
+												   class="form-control" id="nim" readonly placeholder="Nomor Induk Mahasiswa">
 										</div>
 										<div class="form-group">
 											<label for="">Username</label>
 											<input type="text" value="<?= $user['username'] ?>" name="username"
-												   class="form-control" placeholder="Username" id="">
+												   class="form-control" placeholder="Username" readonly id="">
 										</div>
 										<div class="form-group">
 											<label for="">Ganti Password</label>
